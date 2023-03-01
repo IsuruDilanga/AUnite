@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="Assets/AUnite Logo without wording.png">
+    <title>AUnite</title>
+    <link rel="stylesheet" href="SignUp.css" />
+</head>
+<body>
+    <nav>
+        <a href="#">
+            <img class="RegisterIcon" src="Assets/RegisterIcon.png" alt="RegisterIcon">
+        </a>
+        <h1 class="CreateAccountWording">
+            Create Account
+            <br>
+        </h1>
+
+        <div class="right-align">
+            <a href="HomePage.html">
+                <img class="HomePageIcon" src="Assets/HomePageIcon.png" alt="HomePageIcon">
+            </a>
+            <h2 class="homeLable">Home</h2>
+        </div>
+    </nav>
+
+    <section class="container">
+        <header>Registration Form</header>
+        <form action="#" class="form">
+          <div class="input-box">
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter full name" required />
+          </div>
+  
+          <div class="input-box">
+            <label>Email Address</label>
+            <input type="text" placeholder="Enter email address" required />
+          </div>
+  
+          <div class="column">
+            <div class="input-box">
+              <label>Phone Number</label>
+              <input type="number" placeholder="Enter phone number" required />
+            </div>
+            <div class="input-box">
+              <label>Birth Date</label>
+              <input type="date" placeholder="Enter birth date" required />
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="input-box">
+              <label>Password</label>
+              <input type="password" placeholder="Enter password" required />
+            </div>
+            <div class="input-box">
+              <label>Confirm Password</label>
+              <input type="password" placeholder="Enter password" required />
+            </div>
+          </div>
+
+          <div class="gender-box">
+            <h3>Gender</h3>
+            <div class="gender-option">
+              <div class="gender">
+                <input type="radio" id="check-male" name="gender" checked />
+                <label for="check-male">Male</label>
+              </div>
+              <div class="gender">
+                <input type="radio" id="check-female" name="gender" />
+                <label for="check-female">Female</label>
+              </div>
+              <div class="gender">
+                <input type="radio" id="check-other" name="gender" />
+                <label for="check-other">Prefer not to say</label>
+              </div>
+            </div>
+          </div>
+          <button>Submit</button>
+        </form>
+      </section>
+    
+</body>
+</html>
