@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, render_template, jsonify
 import base64
 import cv2
 import numpy as np
@@ -6,6 +6,7 @@ from keras.models import model_from_json
 from flask_cors import CORS
 from datetime import datetime
 import os
+import json
 
 
 # Load the CNN model architecture from JSON file
@@ -22,7 +23,7 @@ loaded_model.load_weights('Model/FacialEmotionModel.h5')
 loaded_model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
 app = Flask(__name__)
-CORS(app, origins=["http://127.0.0.1:5500"])
+# CORS(app, origins=["http://127.0.0.1:5500"])
 
 # Define the folder for uploaded images
 UPLOAD_FOLDER = 'Image_Uploads'
@@ -31,23 +32,74 @@ UPLOAD_FOLDER = 'Image_Uploads'
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
-# Define a REST API endpoint for receiving captured images
+
 @app.route('/api/capture_image', methods=['POST'])
+def faceRecognition():
+    return render_template('FR.html')
+
+# Define a REST API endpoint for receiving captured images
+# @app.route('/api/capture_image', methods=['POST'])
+# def capture_image():
+#     try:
+#         # Get the image data from the request
+#         image_data = request.get_data()
+#         print('Image data received:', image_data)
+
+#         # Decode the image data from base64
+#         decoded_data = base64.b64decode(image_data)
+#         img = cv2.imdecode(np.fromstring(decoded_data, np.uint8), cv2.IMREAD_UNCHANGED)
+
+#         # Save the image to disk
+#         filename = datetime.now().strftime('%Y%m%d%H%M%S') + '.png'
+#         filepath = os.path.join(UPLOAD_FOLDER, filename)
+#         print('Saving image to:', filepath)
+#         cv2.imwrite(filepath, img)
+
+#         # Preprocess the image for input to the model
+#         preprocessed_image = preprocess_image(img)
+
+#         # Use the model to predict the emotion in the image
+#         emotion = predict_emotion(preprocessed_image)
+#         print('Predicted emotion:', emotion)
+
+#         # Encode the processed image as a base64 string
+#         encoded_image = encode_image(preprocessed_image)
+
+#         # Return the predicted emotion and encoded image as a JSON response
+#         return jsonify({'emotion': emotion, 'encoded_image': encoded_image})
+
+#     except Exception as e:
+#         print('Error:', str(e))
+#         return jsonify({'status': 'error', 'message': str(e)})
+
+# Define a REST API endpoint for the home page
+@app.route('/')
+def home():
+    return render_template('FR.html')
+
+@app.route('/upload', methods=['POST'])
 def capture_image():
     try:
+
+        data = request.get_json()
+        image_data = data['image']
+
         # Get the image data from the request
-        image_data = request.get_data()
-        print('Image data received:', image_data)
+        # image_data = request.get_data()
+        # print('Image data received:', image_data)
+        print('Image data received:')
 
         # Decode the image data from base64
-        decoded_data = base64.b64decode(image_data)
+        decoded_data = base64.b64decode(image_data.split(',')[1])
         img = cv2.imdecode(np.fromstring(decoded_data, np.uint8), cv2.IMREAD_UNCHANGED)
 
         # Save the image to disk
-        filename = datetime.now().strftime('%Y%m%d%H%M%S') + '.png'
-        filepath = os.path.join(UPLOAD_FOLDER, filename)
-        print('Saving image to:', filepath)
-        cv2.imwrite(filepath, img)
+        # filename = datetime.now().strftime('%Y%m%d%H%M%S') + '.png'
+        filename = 'capture.png'
+        save_path = os.path.join('Image_Uploads', filename)
+        # filepath = os.path.join('Image_Uploads', filename)
+        print('Saving image to:', save_path)
+        cv2.imwrite(save_path, img)
 
         # Preprocess the image for input to the model
         preprocessed_image = preprocess_image(img)
@@ -57,19 +109,14 @@ def capture_image():
         print('Predicted emotion:', emotion)
 
         # Encode the processed image as a base64 string
-        encoded_image = encode_image(preprocessed_image)
+        # encoded_image = encode_image(preprocessed_image)
 
         # Return the predicted emotion and encoded image as a JSON response
-        return jsonify({'emotion': emotion, 'encoded_image': encoded_image})
+        return jsonify({'emotion': emotion})
 
     except Exception as e:
         print('Error:', str(e))
         return jsonify({'status': 'error', 'message': str(e)})
-
-# Define a REST API endpoint for the home page
-@app.route('/')
-def home():
-    return 'This is the home page.'
 
 # Define a helper function to decode a base64-encoded image and convert it to a numpy array
 def decode_image(base64_string):
@@ -125,7 +172,7 @@ def predict_emotion(image):
 
 if __name__ == '__main__':
     # Run the Flask app on port 5000
-    app.run(host='0.0.0.0', port=5000)
+    app.run(port=4000, debug=True)
 
 
 
