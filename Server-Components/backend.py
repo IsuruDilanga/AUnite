@@ -13,6 +13,7 @@ import json
 with open('Model/FacialEmotionModel.json', 'r') as json_file:
     loaded_model_json = json_file.read()
 
+
 # Create the CNN model from the loaded architecture
 loaded_model = model_from_json(loaded_model_json)
 
@@ -33,9 +34,9 @@ if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
 
-@app.route('/api/capture_image', methods=['POST'])
-def faceRecognition():
-    return render_template('FR.html')
+# @app.route('/api/capture_image', methods=['POST'])
+# def faceRecognition():
+#     return render_template('FR.html')
 
 # Define a REST API endpoint for receiving captured images
 # @app.route('/api/capture_image', methods=['POST'])
