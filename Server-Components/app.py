@@ -18,5 +18,9 @@ def mgl2():
 def mgl3():
     return render_template('MGlevel3.html')
 
+@app.route('/snake')
+def snake():
+    return render_template('snake.html')
+
 if __name__ == '__main__':
     app.run(port = 3000, debug=True)
