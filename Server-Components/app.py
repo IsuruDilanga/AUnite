@@ -22,5 +22,9 @@ def mgl3():
 def snake():
     return render_template('snake.html')
 
+@app.route('/tic')
+def tic():
+    return render_template('ticTacToe.html')
+
 if __name__ == '__main__':
     app.run(port = 3000, debug=True)
