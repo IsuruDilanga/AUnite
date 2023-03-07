@@ -10,5 +10,9 @@ def games():
 def mgl1():
     return render_template('MGlevel1.html')
 
+@app.route('/MGL2')
+def mgl2():
+    return render_template('MGlevel2.html')
+
 if __name__ == '__main__':
     app.run(port = 3000, debug=True)
