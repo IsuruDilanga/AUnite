@@ -1,0 +1,143 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+  background: #FFF3B5;
+}
+
+.nav-bar {
+  height: 50px;
+}
+
+.right-align{
+  text-align: right;
+  justify-content: right;
+}
+
+.homeImage{
+  position: absolute;
+  width: 56px;
+  height: 57px;
+  bottom: 770px;
+  right: 75px;
+}
+
+.homeLabel{
+  position: absolute;
+  right: 53px;
+  bottom: 713px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.container{
+  width: 700px;
+  margin: 3.8rem auto;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.progress-container{
+  margin:auto;
+  width: 150px;
+  height: 300px; 
+}
+
+h2{
+  margin: 20px;
+  padding-bottom: 15px;
+  text-transform: uppercase;
+  font-size: 40px;
+} 
+
+.progress-report {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.subject {
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  width: 550px; /* set a fixed width */
+  height: 30px;
+  background-color: grey;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.bar {
+  height: 100%;
+  background-color: #4CAF50;
+  width: 0%;
+  transition: width 0.5s ease-in-out;
+}
+
+.percent {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 14px;
+}
+
+
+.line{
+  margin-top: 2rem;
+  border: 1px solid rgb(216, 216, 216);
+}
+
+.progress{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress h3{
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.progress span{
+  font-size: 1rem;
+  color: rgb(99, 98, 98);
+}
+
+.progress .line{
+  height: 5rem;
+}
+
+.contact{
+  display: flex;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(171, 255, 132, 0.5);
+  border: 3px solid #ABFF84;
+}
+
+.contact img{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  padding: 2px;
+  border: 1px solid rgb(159, 149. 167);
+}
+
+.contact .text{
+  text-align: left;
+  padding: 10px 20px;
+}
+
+.contact .text h3{
+  text-transform: capitalize;
+}
