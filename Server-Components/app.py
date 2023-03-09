@@ -164,6 +164,8 @@ def capture_image():
         emotion = predict_emotion(preprocessed_image)
         print('Predicted emotion:', emotion)
 
+        session['emotion'] = emotion
+
         # Encode the processed image as a base64 string
         # encoded_image = encode_image(preprocessed_image)
 
