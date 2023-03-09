@@ -1,4 +1,4 @@
-from flask import Flask, flash, render_template, url_for, redirect, request
+from flask import Flask, flash, render_template, url_for, redirect, request, session
 
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
@@ -16,7 +16,7 @@ db = SQLAlchemy(app)
 app.config['SECRET_KEY'] = 'thisisasecretkey'
 
 @app.route('/')
-def home():
+def loginpage():
     return render_template('login.html')
 
 @app.route('/', methods=['POST'])
@@ -31,7 +31,14 @@ def login():
     row = c.fetchone()
 
     if row:
-        return render_template('mainPage.html')
+        c1 = conn.cursor()
+        c1.execute('SELECT email, password, fullname, number, dob FROM user WHERE email=? AND password=?',(email, password))
+        row1 = c1.fetchone()
+        email, password, fullname, number, dob = row1
+        # print("fullname="+fullname)
+
+        session['fullname'] = fullname
+        return redirect('/home')
     else:
         flash("Enter details are wrong! Please check again")
         return redirect('/')
@@ -83,6 +90,16 @@ def signup():
 
     return render_template('SignUp.html')
     
+@app.route('/home')
+def home():
+    fullname = session.pop('fullname', None)
+    return render_template('HomePage.html', fullname=fullname)
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect('/')
+
 
 if __name__ == '__main__':
     app.run(port=4000, debug=True)
