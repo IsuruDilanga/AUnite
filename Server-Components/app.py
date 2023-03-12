@@ -228,6 +228,9 @@ def predict_emotion(image):
     elif emotion_index == 6:
         return 'neutral'
 
+@app.route('/meetTeam')
+def meetTeam():
+    return render_template('MeetTeam.html')
 
 if __name__ == '__main__':
     app.run(port=4000, debug=True)
