@@ -24,7 +24,7 @@ app.config['SECRET_KEY'] = 'thisisasecretkey'
 @app.route('/')
 def EQpage():
 
-    emotionalId= "2"
+    emotionalId= "5"
     conn = sqlite3.connect('EQData.db')
     c = conn.cursor()
 
