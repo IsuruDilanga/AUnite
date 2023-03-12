@@ -1,0 +1,200 @@
+body { 
+    background-image: url("Assets/profilebg.png");
+    background-color: #FFF3B5;
+}
+
+.AUnite{
+
+    position: relative;
+    width: 80px;
+    height: 99px;
+    left: 25px;
+    top: 25px;
+}
+
+.AUniteWording{
+    position: relative;
+    width: 400px;
+    margin-top: 0;
+    /* height: 50px; */
+    left: 120px;
+    bottom: 28px;
+    line-height: 22px;
+    /* top: 30px; */
+
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 35px;
+
+    color: #000000;
+}
+
+
+.autistic-word{
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.right-align{
+    text-align: right;
+    justify-content: right;
+}
+
+.homeImage{
+    position: relative;
+    width: 56px;
+    height: 57px;
+    bottom: 120px;
+    right: 75px;
+}
+
+.homeLable{
+    position: relative;
+    right: 75px;
+    bottom: 140px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+.details {
+    display: flex;
+}
+
+.ProfileIcon {
+    position: relative;
+    width: 80px;
+    height: 99px;
+    left: 25px;
+    top: 25px; 
+}
+
+.ProfileHeading {
+    position: relative;
+    width: 400px;
+    margin-top: 0;
+    /* height: 50px; */
+    left: 120px;
+    bottom: 28px;
+    line-height: 22px;
+    /* top: 30px; */
+
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 35px;
+
+    color: #000000;
+}
+
+.Profileimg {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    left: 91px;
+    top: 300px;
+}
+
+.profilePhoto {
+    background-color: #F2F4B2;
+    width: 340px;
+    height: 340px;
+    border: 3px solid #ABFF84;
+    margin-top: 250px;
+    margin-left: 45px;
+}
+
+.detailstexes {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 108px;
+    margin-top: 160px;
+    margin-left: 100px;
+    text-align: right;
+}
+
+.inputdetails {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 48px;
+    margin-top: 190px;
+    margin-left: 700x;
+    text-align: left;
+
+}
+
+
+
+#Name {
+    border: 3px solid #ABFF84;
+    background-color: #F2F4B2;
+    margin: 50px;
+    margin-top: 0px;
+    line-height: 48px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    
+}
+
+#Age{
+    border: 3px solid #ABFF84;
+    background-color: #F2F4B2;
+    margin: 50px;
+    margin-top: 0px;
+    margin-right:80px ;
+    line-height: 48px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+#Email {
+    border: 3px solid #ABFF84;
+    background-color: #F2F4B2;
+    margin: 50px;
+    margin-top: 0px;
+    margin-right:-20px;
+    line-height: 48px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+#Password {
+    border: 3px solid #ABFF84;
+    background-color: #F2F4B2;
+    margin: 50px;
+    margin-top: 0px;
+    margin-right:-180px;
+    line-height: 48px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+
+@media screen and (max-width: 820px) {
+    body {
+        display: block;
+        position: relative;
+        left: 27%;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    body {
+        display: block;
+        position: relative;
+        left: 0%;
+    }
+}
