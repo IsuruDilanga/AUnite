@@ -140,24 +140,16 @@ def capture_image():
         data = request.get_json()
         image_data = data['image']
 
-        # Get the image data from the request
-        # image_data = request.get_data()
-        # print('Image data received:', image_data)
         print('Image data received:')
 
-        # Decode the image data from base64
         decoded_data = base64.b64decode(image_data.split(',')[1])
         img = cv2.imdecode(np.fromstring(decoded_data, np.uint8), cv2.IMREAD_UNCHANGED)
 
-        # Save the image to disk
-        # filename = datetime.now().strftime('%Y%m%d%H%M%S') + '.png'
         filename = 'capture.png'
         save_path = os.path.join('Image_Uploads', filename)
-        # filepath = os.path.join('Image_Uploads', filename)
         print('Saving image to:', save_path)
         cv2.imwrite(save_path, img)
 
-        # Preprocess the image for input to the model
         preprocessed_image = preprocess_image(img)
 
         # Use the model to predict the emotion in the image
@@ -166,10 +158,6 @@ def capture_image():
 
         session['emotion'] = emotion
 
-        # Encode the processed image as a base64 string
-        # encoded_image = encode_image(preprocessed_image)
-
-        # Return the predicted emotion and encoded image as a JSON response
         return jsonify({'emotion': emotion})
 
     except Exception as e:

@@ -49,7 +49,6 @@
                     <br><br>
                     <input class="password-text" name="password" type="password" placeholder="Password">
                     <br><br>
-                    <a href="#">Forget Password</a>
                     <br>
                     {% with messages = get_flashed_messages() %}
                     {% if messages %}
@@ -70,7 +69,7 @@
     <img class="loginBackground" src="/static/styles/Image/loginBackground.png" alt="Login-background">
 
     <div class="signup-button">
-        <a href="#" style="text-decoration: none;">
+        <a href="{{url_for('signupPage')}}" style="text-decoration: none;">
             <img class="circle" src="/static/styles/Image/circle.png" alt="Circle">
             <h2 class="plus">+</h2>
         </a>
