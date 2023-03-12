@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">  
+    <title>Memory Card Game in JavaScript | CodingNepal</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/MGL3.css') }}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="nav-bar">
+        <!-- <img src="images/AUnite-removebg-preview.png" alt=""> -->
+        <a href="#">
+            <img class="AUnite" src="/static/styles/images/AUnite-removebg-preview1.png" alt="AUnite">
+        </a>
+        <h1 class="AUniteWording">
+            AUnite
+            <br>
+            <span class="autistic-word">Autistic Unite</span> 
+        </h1>
+        <div class="right-align">
+            <a href="{{url_for('games')}}">
+                <img class="homeImage" src="/static/styles/images/back-icon.png" alt="home-image">
+            </a>
+            <h2 class="homeLable">Back</h2>
+        </div>
+    </nav>
+    <h1 class="heading">
+        Memory Game Level 3
+    </h1>
+    <section class="game">
+        <div class="wrapper">
+            <ul class="cards">
+                <li class="card">
+                    <div class="view front-view">
+                        <img src="/static/styles/images/que_icon.png" alt="icon">
+                    </div>
+                    <div class="view back-view">
+                        <img src="/static/styles/images/img-1.png" alt="card-img">
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="view front-view">
+                        <img src="/static/styles/images/que_icon.png" alt="icon">
+                    </div>
+                    <div class="view back-view">
+                        <img src="/static/styles/images/img-6.png" alt="card-img">
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="view front-view">
+                        <img src="/static/styles/images/que_icon.png" alt="icon">
+                    </div>
+                    <div class="view back-view">
+                        <img src="/static/styles/images/img-3.png" alt="card-img">
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="view front-view">
+                        <img src="/static/styles/images/que_icon.png" alt="icon">
+                    </div>
+                    <div class="view back-view">
+                        <img src="/static/styles/images/img-2.png" alt="card-img">
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="view front-view">
+                        <img src="/static/styles/images/que_icon.png" alt="icon">
+                    </div>
+                    <div class="view back-view">
+                        <img src="/static/styles/images/img-1.png" alt="card-img">
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="view front-view">
+                        <img src="/static/styles/images/que_icon.png" alt="icon">
+                    </div>
+                    <div class="view back-view">
+                        <img src="/static/styles/images/img-5.png" alt="card-img">
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="view front-view">
+                        <img src="/static/styles/images/que_icon.png" alt="icon">
+                    </div>
+                    <div class="view back-view">
+                        <img src="/static/styles/images/img-2.png" alt="card-img">
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="view front-view">
+                        <img src="/static/styles/images/que_icon.png" alt="icon">
+                    </div>
+                    <div class="view back-view">
+                        <img src="/static/styles/images/img-6.png" alt="card-img">
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="view front-view">
+                        <img src="/static/styles/images/que_icon.png" alt="icon">
+                    </div>
+                    <div class="view back-view">
+                        <img src="/static/styles/images/img-3.png" alt="card-img">
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="view front-view">
+                        <img src="/static/styles/images/que_icon.png" alt="icon">
+                    </div>
+                    <div class="view back-view">
+                        <img src="/static/styles/images/img-4.png" alt="card-img">
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="view front-view">
+                        <img src="/static/styles/images/que_icon.png" alt="icon">
+                    </div>
+                    <div class="view back-view">
+                        <img src="/static/styles/images/img-5.png" alt="card-img">
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="view front-view">
+                        <img src="/static/styles/images/que_icon.png" alt="icon">
+                    </div>
+                    <div class="view back-view">
+                        <img src="/static/styles/images/img-4.png" alt="card-img">
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="view front-view">
+                        <img src="/static/styles/images/que_icon.png" alt="icon">
+                    </div>
+                    <div class="view back-view">
+                      <img src="/static/styles/images/img-4.png" alt="card-img">
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="view front-view">
+                        <img src="/static/styles/images/que_icon.png" alt="icon">
+                    </div>
+                    <div class="view back-view">
+                        <img src="/static/styles/images/img-4.png" alt="card-img">
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="view front-view">
+                        <img src="/static/styles/images/que_icon.png" alt="icon">
+                    </div>
+                    <div class="view back-view">
+                        <img src="/static/styles/images/img-4.png" alt="card-img">
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="view front-view">
+                        <img src="/static/styles/images/que_icon.png" alt="icon">
+                    </div>
+                    <div class="view back-view">
+                        <img src="/static/styles/images/img-4.png" alt="card-img">
+                    </div>
+                </li>
+            </ul>
+            <div class="details">
+                <p class="time">Time: <span><b>20</b>s</span></p>
+                <p class="flips">Flips: <span><b>0</b></span></p>
+                <button>Refresh</button>
+            </div>
+        </div>
+        <div class="won-notice-1star">
+            <h2>
+                You won
+                <img src="/static/styles/images/won-icon.png" alt="smile-image">
+                <br>
+                <img src="/static/styles/images/star-icon.png" alt="star">
+            </h2>
+        </div>
+        <div class="won-notice-2star">
+            <h2>
+                You won
+                <img src="/static/styles/images/won-icon.png" alt="smile-image">
+                <br>
+                <img src="/static/styles/images/star-icon.png" alt="star">
+                <img src="/static/styles/images/star-icon.png" alt="star">
+            </h2>
+        </div>
+        <div class="won-notice-3star">
+            <h2>
+                You won
+                <img src="/static/styles/images/won-icon.png" alt="smile-image">
+                <br>
+                <img src="/static/styles/images/star-icon.png" alt="star">
+                <img src="/static/styles/images/star-icon.png" alt="star">
+                <img src="/static/styles/images/star-icon.png" alt="star">
+            </h2>
+        </div>
+        <div class="notice">
+            <h2><span style="font-size: 45px;">
+                    Time Over 
+                </span> 
+                <br>
+                Let's try again
+                <img src="/static/styles/images/smile_icon.png" alt="smile-emoji">
+                <br>
+                <span style="font-size: 25px;">
+                    Press Refresh button to restart 
+                </span>
+            </h2>
+        </div>
+    </section>
+    
+    
+    <script src="{{ url_for('static',filename='script/MGL3.js') }}"> </script>
+
+  </body>
+</html>
