@@ -1,0 +1,120 @@
+body {
+    background-color: #FFF3B5;
+    /* background-image: linear-gradient(140deg, white, #FFF3B5); */
+    margin: 0;
+    width: 100%;
+    min-height: 450px;
+    height: 100vh;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center; 
+}
+
+.nav-bar {
+    height: 120px;
+    /* display: inline; */
+    /* width: 100%; */
+    /* justify-content: center; */
+    /* justify-content: space-between; */
+}
+  
+.AUnite{
+    position: relative;
+    width:120px;
+    height: 99px;
+    left: 25px;
+    top: 25px;
+    /* left: 37px;
+    top: 550px; */
+}
+  
+.AUniteWording{
+    position: relative;
+    width: 500px;
+    margin-top: 0;
+    /* height: 50px; */
+    left: 160px;
+    bottom: 18px;
+    line-height: 22px;
+    /* top: 30px; */
+  
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 40px;
+  
+    color: #000000;
+}
+  
+.autistic-word{
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-weight: 400;
+}
+  
+  
+.right-align{
+    text-align: right;
+    justify-content: right;
+}
+  
+.homeImage{
+    position: relative;
+    width: 56px;
+    height: 57px;
+    bottom: 120px;
+    right: 75px;
+}
+  
+.homeLable{
+    position: relative;
+    right: 75px;
+    bottom: 140px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.backgroundImg img{
+    position: absolute;
+    right: 1000px;
+    top: 50px;
+}
+
+.heading{
+    margin-top: 50px;
+    margin-bottom: 0;
+
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 80px;
+
+}
+
+.EQ-video{
+    position: relative;
+    text-align: center;
+    margin-top: 0;
+}
+
+.EQ-video video{
+    border-radius: 500px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 420px) {
+    .AUniteWording{
+        width: 200px;
+        display: none;
+    }
+
+    .homeImage{
+        bottom: 70px;
+    }
+
+    .homeLable{
+        bottom: 80px;
+    }
+}
