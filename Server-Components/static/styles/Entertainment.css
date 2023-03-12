@@ -1,0 +1,160 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  /* min-height: 100vh; */
+  background-image: url("Assets/EntertainmenetBG1.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center center;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #FFF3B5;
+}
+
+
+
+.EntertainmentIcon {
+  position: relative;
+  width: 80px;
+  height: 99px;
+  left: 25px;
+  top: 25px;
+}
+
+.EntertainmentWording {
+  position: relative;
+  width: 400px;
+  margin-top: 0;
+    /* height: 50px; */
+  left: 120px;
+  bottom: 28px;
+  line-height: 22px;
+    /* top: 30px; */
+
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 35px;
+
+  color: #000000;
+  /* line-height: 48px; */
+}
+
+.right-align{
+  text-align: right;
+  justify-content: right;
+}
+
+.HomePageIcon{
+  position: relative;
+  width: 56px;
+  height: 57px;
+  bottom: 90px;
+  right: 75px;
+}
+
+.homeLable{
+  position: relative;
+  right: 75px;
+  bottom: 85px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+
+.middle{
+  display: flex;
+  justify-content: space-around;
+}
+
+.btnMu {
+  cursor: pointer;
+  position: relative;
+  width: 437px;
+  height: 408px;
+  background: #F2F4B2;
+  border: 3px solid #ABFF84;
+}
+
+.Musicicon {
+  width: 175px;
+  height: 182px;
+  background: url(Assets/MusicIcon.png);
+}
+
+.Gameicon{
+  position: relative;
+  width: 175px;
+  height: 182px;
+  background: url(Assets/GameIcon.png);
+}
+
+.music {
+  position: relative;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  color: #000000;
+}
+.game{
+  position: relative;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight:bold;
+  font-size: 24px;
+  color: #000000;
+}
+.btnGm {
+  cursor: pointer;
+  position: relative;
+  width: 437px;
+  height: 408px;
+  background: #F2F4B2;
+  border: 3px solid #ABFF84;
+}
+
+@media screen and (max-width: 820px) {
+  body{
+      display: block;
+      position: relative;
+      left: 27%;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  body{
+      display: block;
+      position: relative;
+      left: 0%;
+  }
+
+  .btnMu {
+    position: absolute;
+    width: 437px;
+    height: 408px;
+    left: 950px;
+    top: 250px;
+    background: #F2F4B2;
+    border: 3px solid #ABFF84;
+  }
+
+  .btnGm {
+    position: absolute;
+    width: 437px;
+    height: 408px;
+    left: 310px;
+    top: 250px;
+  
+    background: #F2F4B2;
+    border: 3px solid #ABFF84;
+  }
+}
