@@ -40,7 +40,7 @@ UPLOAD_FOLDER = 'Image_Uploads'
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///userData.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///AUnite.db'
 db = SQLAlchemy(app)
 app.config['SECRET_KEY'] = 'thisisasecretkey'
 
@@ -53,7 +53,7 @@ def login():
     email = request.form['email']
     password = request.form['password']
 
-    conn = sqlite3.connect('userData.db')
+    conn = sqlite3.connect('AUnite.db')
     c = conn.cursor()
 
     c.execute('SELECT * FROM user WHERE email=? AND password=?',(email, password))
@@ -96,7 +96,7 @@ def signup():
     elif(request.form['gender'] == 'NA'):
         gender = 'Not preferred'
 
-    conn = sqlite3.connect('userData.db')
+    conn = sqlite3.connect('AUnite.db')
     c1 = conn.cursor()
 
     c1.execute('SELECT email FROM user')
@@ -163,6 +163,35 @@ def capture_image():
     except Exception as e:
         print('Error:', str(e))
         return jsonify({'status': 'error', 'message': str(e)})
+
+@app.route('/EQ')
+def eq():
+    # emotion = session.pop('emotion', None)
+    emotion = session.get('emotion')
+
+    emotionalId = ""
+
+    if emotion == "happy":
+        emotionalId = "1"
+    elif emotion == "happy":
+        emotionalId == "2"
+    elif emotion == "neutral":
+        emotionalId == "3"
+    elif emotion == "sad":
+        emotionalId == "4"
+    else:
+        emotionalId = "5"
+
+    conn = sqlite3.connect('AUnite.db')
+    c = conn.cursor()
+
+    c.execute('SELECT EQWording, shortMotivationVideo FROM eqtable WHERE EmotionalId = ?', (emotionalId))
+    data = c.fetchall()
+
+    result = [{'EQWording': row[0], 'ShortMotivationVideo':row[1]} for row in data]
+
+    print(result)
+    return render_template('EQ.html', data=json.dumps(result))
 
 # Define a helper function to decode a base64-encoded image and convert it to a numpy array
 def decode_image(base64_string):
