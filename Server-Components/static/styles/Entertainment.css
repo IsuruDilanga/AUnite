@@ -4,16 +4,12 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   font-family: "Poppins", sans-serif;
 }
 
 body {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
+  /* min-height: 100vh; */
   background-image: url("Assets/EntertainmenetBG1.png");
   background-repeat: no-repeat;
   background-size: 100%;
@@ -22,57 +18,68 @@ body {
   background-color: #FFF3B5;
 }
 
-.EntertainmentIcon {
 
-  position: absolute;
-  width: 110px;
-  height: 112px;
-  left: 81px;
-  top: 44px;
+
+.EntertainmentIcon {
+  position: relative;
+  width: 80px;
+  height: 99px;
+  left: 25px;
+  top: 25px;
 }
 
 .EntertainmentWording {
-  position: absolute;
-  width: 620px;
-  height: 101px;
-  left: 219px;
-  top: 73px;
+  position: relative;
+  width: 400px;
+  margin-top: 0;
+    /* height: 50px; */
+  left: 120px;
+  bottom: 28px;
+  line-height: 22px;
+    /* top: 30px; */
 
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 900;
-  font-size: 40px;
-  line-height: 48px;
+  font-size: 35px;
+
+  color: #000000;
+  /* line-height: 48px; */
 }
 
-.HomePageIcon {
-  position: absolute;
+.right-align{
+  text-align: right;
+  justify-content: right;
+}
+
+.HomePageIcon{
+  position: relative;
   width: 56px;
   height: 57px;
-  right: 81px;
-  top: 44px;
+  bottom: 90px;
+  right: 75px;
 }
 
-.homeLable {
-  position: absolute;
-  width: 85px;
-  height: 12px;
-  right: 52px;
-  top: 100px;
-
+.homeLable{
+  position: relative;
+  right: 75px;
+  bottom: 85px;
   font-family: 'Inter', sans-serif;
-  font-style: normal;
   font-weight: 700;
   font-size: 20px;
-  line-height: 24px;
+}
+
+
+.middle{
+  display: flex;
+  justify-content: space-around;
 }
 
 .btnMu {
-  position: absolute;
+  cursor: pointer;
+  position: relative;
   width: 437px;
   height: 408px;
-  left: 950px;
-  top: 250px;
   background: #F2F4B2;
   border: 3px solid #ABFF84;
 }
@@ -80,47 +87,37 @@ body {
 .Musicicon {
   width: 175px;
   height: 182px;
-  left: 858px;
-  top: 300px;
   background: url(Assets/MusicIcon.png);
 }
 
 .Gameicon{
-  position: absolute;
+  position: relative;
   width: 175px;
   height: 182px;
-  left: 120px;
-  top: 100px;
   background: url(Assets/GameIcon.png);
 }
 
 .music {
-  position: absolute;
+  position: relative;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 800;
   font-size: 24px;
   color: #000000;
-  bottom: 20px;
-  left: 135px;
 }
 .game{
-  position: absolute;
+  position: relative;
   font-family: 'Inter';
   font-style: normal;
   font-weight:bold;
   font-size: 24px;
   color: #000000;
-  bottom: 20px;
-  left: 122px;
 }
 .btnGm {
-  position: absolute;
+  cursor: pointer;
+  position: relative;
   width: 437px;
   height: 408px;
-  left: 310px;
-  top: 250px;
-
   background: #F2F4B2;
   border: 3px solid #ABFF84;
 }

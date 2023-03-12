@@ -249,5 +249,9 @@ def predict_emotion(image):
 def meetTeam():
     return render_template('MeetTeam.html')
 
+@app.route('/entertainment')
+def entertainment():
+    return render_template('Entertainment.html')
+
 if __name__ == '__main__':
     app.run(port=4000, debug=True)

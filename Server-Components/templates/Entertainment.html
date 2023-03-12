@@ -10,7 +10,7 @@
 </head>
 <body>
     <nav>
-        <a href="#">
+        <a href="{{ url_for('home')}}">
             <img class="EntertainmentIcon" src="static/styles/Assets/EntertainmentIcon.png" alt="EntertainmentIcon">
         </a>
         <h1 class="EntertainmentWording">
@@ -19,11 +19,13 @@
         </h1>
 
         <div class="right-align">
-            <a href="HomePage.html">
+            <a href="{{ url_for('home')}}">
                 <img class="HomePageIcon" src="static/styles/Assets/HomePageIcon.png" alt="HomePageIcon">
             </a>
             <h2 class="homeLable">Home</h2>
         </div>
+    </nav>
+    <div class="middle">
         <div class="Entertainment">
             <a href="Music.html">
                 <button class="btnMu"><img class="Musicicon" src="static/styles/Assets/MusicIcon.png" alt="Musicicon"><div class="music">Listen to Music </div></button>
@@ -34,7 +36,7 @@
                 <button class="btnGm"><img class="Gameicon" src="static/styles/Assets/GameIcon.png" alt="Gameicon"><div class="game">Play video games</div></button>
             </a>
         </div>
-    </nav>
-
+    </div>
+    
 </body>
 </html>
