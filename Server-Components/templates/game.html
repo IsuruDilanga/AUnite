@@ -14,7 +14,7 @@
 </head>
 <body>
     <nav class="nav-bar">
-        <a href="#">
+        <a href="{{ url_for('home')}}">
             <img class="AUnite" src="/static/styles/images/AUnite-removebg-preview1.png" alt="AUnite">
         </a>
         <h1 class="AUniteWording">
@@ -23,10 +23,10 @@
             <span class="autistic-word">Autistic Unite</span> 
         </h1>
         <div class="right-align">
-            <a href="#">
-                <img class="homeImage" src="/static/styles/images/homeImage.png" alt="home-image">
+            <a href="{{ url_for('entertainment')}}">
+                <img class="homeImage" src="/static/styles/images/back-icon.png" alt="home-image">
             </a>
-            <h2 class="homeLable">Home</h2>
+            <h2 class="homeLable">Back</h2>
         </div>
     </nav>
     <h1 class="heading">
