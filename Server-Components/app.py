@@ -253,5 +253,9 @@ def meetTeam():
 def entertainment():
     return render_template('Entertainment.html')
 
+@app.route('/userProfile')
+def userProfile():
+    return render_template('profile.html')
+
 if __name__ == '__main__':
     app.run(port=4000, debug=True)
