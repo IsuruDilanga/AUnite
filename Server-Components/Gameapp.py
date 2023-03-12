@@ -26,5 +26,9 @@ def snake():
 def tic():
     return render_template('ticTacToe.html')
 
+@app.route('/game1')
+def game1():
+    return render_template('game1.html')
+
 if __name__ == '__main__':
     app.run(port = 3000, debug=True)
