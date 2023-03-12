@@ -1,0 +1,224 @@
+from flask import Flask, flash, render_template, url_for, redirect, request, session
+
+from flask_sqlalchemy import SQLAlchemy
+from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, SubmitField
+from wtforms.validators import InputRequired, Length, ValidationError
+from flask_bcrypt import Bcrypt
+from flask import Flask, request, render_template, jsonify
+import base64
+import cv2
+import numpy as np
+from keras.models import model_from_json
+from flask_cors import CORS
+from datetime import datetime
+import os
+import json
+
+
+import sqlite3
+
+with open('Model/FacialEmotionModel.json', 'r') as json_file:
+    loaded_model_json = json_file.read()
+
+
+# Create the CNN model from the loaded architecture
+loaded_model = model_from_json(loaded_model_json)
+
+# Load the weights into the model
+loaded_model.load_weights('Model/FacialEmotionModel.h5')
+
+# Compile the loaded model
+loaded_model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+
+app = Flask(__name__)
+
+UPLOAD_FOLDER = 'Image_Uploads'
+
+# Create the folder for uploaded images if it doesn't exist
+if not os.path.exists(UPLOAD_FOLDER):
+    os.makedirs(UPLOAD_FOLDER)
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///userData.db'
+db = SQLAlchemy(app)
+app.config['SECRET_KEY'] = 'thisisasecretkey'
+
+@app.route('/')
+def loginpage():
+    return render_template('login.html')
+
+@app.route('/', methods=['POST'])
+def login():
+    email = request.form['email']
+    password = request.form['password']
+
+    conn = sqlite3.connect('userData.db')
+    c = conn.cursor()
+
+    c.execute('SELECT * FROM user WHERE email=? AND password=?',(email, password))
+    row = c.fetchone()
+
+    if row:
+        c1 = conn.cursor()
+        c1.execute('SELECT email, password, fullname, number, dob FROM user WHERE email=? AND password=?',(email, password))
+        row1 = c1.fetchone()
+        email, password, fullname, number, dob = row1
+        # print("fullname="+fullname)
+
+        session['fullname'] = fullname
+        return redirect('/home')
+    else:
+        flash("Enter details are wrong! Please check again")
+        return redirect('/')
+
+    return render_template('login.html')
+
+
+@app.route('/signup')
+def signupPage():
+    return render_template('SignUp.html')
+
+
+@app.route('/signup', methods=['POST'])
+def signup():
+    fullname = request.form['fullname']
+    email = request.form['email']
+    number = request.form['mobile']
+    dob = request.form['dob']
+    password = request.form['pass']
+    gender = ""
+
+    if(request.form['gender'] == 'male'):
+        gender = 'male'
+    elif(request.form['gender'] == 'female'):
+        gender = 'female'
+    elif(request.form['gender'] == 'NA'):
+        gender = 'Not preferred'
+
+    conn = sqlite3.connect('userData.db')
+    c1 = conn.cursor()
+
+    c1.execute('SELECT email FROM user')
+    rows1 = c1.fetchall()
+
+    emailHas = True
+    
+    emails = [row1[0] for row1 in rows1]
+
+    for eachEmail in emails:
+        if eachEmail == email:
+            emailHas = False
+            flash("The Email Address is already Registered")
+            return redirect('/signup')
+
+    if emailHas:
+        c1.execute("INSERT INTO user (email, password, fullname, number, dob, gender) VALUES (?, ?, ?, ?, ?, ?)", (email, password, fullname, number, dob, gender))
+        conn.commit()
+        return render_template('login.html')
+
+    return render_template('SignUp.html')
+    
+@app.route('/home')
+def home():
+    fullname = session.pop('fullname', None)
+    return render_template('HomePage.html', fullname=fullname)
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect('/')
+
+@app.route('/FR')
+def faceRecognition():
+    return render_template('FR.html')
+
+@app.route('/upload', methods=['POST'])
+def capture_image():
+    try:
+
+        data = request.get_json()
+        image_data = data['image']
+
+        print('Image data received:')
+
+        decoded_data = base64.b64decode(image_data.split(',')[1])
+        img = cv2.imdecode(np.fromstring(decoded_data, np.uint8), cv2.IMREAD_UNCHANGED)
+
+        filename = 'capture.png'
+        save_path = os.path.join('Image_Uploads', filename)
+        print('Saving image to:', save_path)
+        cv2.imwrite(save_path, img)
+
+        preprocessed_image = preprocess_image(img)
+
+        # Use the model to predict the emotion in the image
+        emotion = predict_emotion(preprocessed_image)
+        print('Predicted emotion:', emotion)
+
+        session['emotion'] = emotion
+
+        return jsonify({'emotion': emotion})
+
+    except Exception as e:
+        print('Error:', str(e))
+        return jsonify({'status': 'error', 'message': str(e)})
+
+# Define a helper function to decode a base64-encoded image and convert it to a numpy array
+def decode_image(base64_string):
+    imgdata = base64.b64decode(base64_string)
+    img = cv2.imdecode(np.frombuffer(imgdata, np.uint8), cv2.IMREAD_COLOR)
+    return img
+
+# Define a helper function to encode a numpy array as a base64 string
+def encode_image(preprocessed_image):
+    retval, buffer = cv2.imencode('.png', preprocessed_image)
+    encoded_image = base64.b64encode(buffer).decode('utf-8')
+    return encoded_image
+
+# Define a helper function to preprocess an image for input to the model
+def preprocess_image(image):
+    # Convert the image to grayscale
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+    # Resize the image to 48x48 pixels
+    resized = cv2.resize(gray, (48, 48), interpolation=cv2.INTER_AREA)
+
+    # Reshape the image to a 4D tensor with shape (1, 48, 48, 1)
+    reshaped = resized.reshape((1, 48, 48, 1))
+
+    # Normalize the pixel values to be between 0 and 1
+    normalized = reshaped / 255.0
+
+    return normalized
+
+# Define a helper function to use the model to predict the emotion in an image
+def predict_emotion(image):
+    # Use the model to make a prediction on the image
+    prediction = loaded_model.predict(image)
+
+    # Get the index of the predicted emotion (0 = angry, 1 = disgust, 2 = fear, 3 = happy, 4 = sad, 5 = surprise, 6 = neutral)
+    emotion_index = np.argmax(prediction)
+
+    # Map the emotion index to a string label
+    if emotion_index == 0:
+        return 'angry'
+    elif emotion_index == 1:
+        return 'disgust'
+    elif emotion_index == 2:
+        return 'fear'
+    elif emotion_index == 3:
+        return 'happy'
+    elif emotion_index == 4:
+        return 'sad'
+    elif emotion_index == 5:
+        return 'surprise'
+    elif emotion_index == 6:
+        return 'neutral'
+
+@app.route('/meetTeam')
+def meetTeam():
+    return render_template('MeetTeam.html')
+
+if __name__ == '__main__':
+    app.run(port=4000, debug=True)
