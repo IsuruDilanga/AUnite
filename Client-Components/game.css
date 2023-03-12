@@ -140,9 +140,9 @@ body {
 
 .cardContainer {
     position: relative;
-    width: 400px;
+    width: 350px;
     height: 550px;
-    min-width: 400px;
+    min-width: 350px;
     min-height: 550px;
     margin: 4px;
     perspective: 1000px; 
@@ -233,6 +233,9 @@ body {
   
 .front .img3 {
     background-image: url(images/snake-game.png); 
+}
+.front .img4 {
+    background-image: url(images/flying_plane.png); 
 }
   
 .back {
