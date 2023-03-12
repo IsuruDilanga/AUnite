@@ -67,6 +67,9 @@ def login():
         # print("fullname="+fullname)
 
         session['fullname'] = fullname
+        session['email'] = email
+        session['number'] = number
+        session['dob'] = dob
         return redirect('/home')
     else:
         flash("Enter details are wrong! Please check again")
@@ -121,7 +124,7 @@ def signup():
     
 @app.route('/home')
 def home():
-    fullname = session.pop('fullname', None)
+    fullname = session.get('fullname')
     return render_template('HomePage.html', fullname=fullname)
 
 @app.route('/logout')
@@ -255,7 +258,14 @@ def entertainment():
 
 @app.route('/userProfile')
 def userProfile():
-    return render_template('profile.html')
+    fullname = session.get('fullname')
+    # fullname = session.pop('fullname', None)
+    print(fullname)
+    email = session.get('email')
+    number = session.get('number')
+    dob = session.get('dob')
+
+    return render_template('profile.html', fullname=fullname, email=email, number=number, dob=dob)
 
 if __name__ == '__main__':
     app.run(port=4000, debug=True)
