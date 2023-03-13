@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="static/styles/Assets/AUnite Logo without wording.png">
+    <title>AUnite</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/music.css') }}">
+</head>
+
+<body>
+    <nav>
+        <a href="#">
+            <img class="MusicIcon" src="static/styles/Assets/MusicIcon.png" alt="EntertainmentIcon">
+        </a>
+        <h1 class="MusicWording">
+           Music
+            <b r>
+        </h1>
+        <div class="MusicDescription">
+            which kind of song do you like to listen :) ?
+        </div>
+
+        <div class="right-align">
+            <a href="HomePage.html">
+                <img class="HomePageIcon" src="static/styles/Assets/HomePageIcon.png" alt="HomePageIcon">
+            </a>
+            <h2 class="homeLable">Home</h2>
+        </div>
+       
+        <div class="Music">
+            <a href="{{url_for('CMusic')}}">
+                <button class="btnCM"><img class="CalmMusicicon" src="static/styles/Assets/calmmusic.png" alt="CalmMusic">
+                    <div class="music">Relaxing Songs </div>
+                </button>
+            </a>
+        </div>
+        <div class="Music">
+            <a href="{{url_for('KMusic')}}">
+                <button class="btnKM"><img class="KidsMusicicon" src="static/styles/Assets/kidsmusic.png" alt="KidsMusic">
+                    <div class="music">Children Songs</div>
+                </button>
+            </a>
+        </div>
+        <div class="Music">
+            <a href="{{url_for('OMusic')}}">
+                <button class="btnOS"><img class="OtherMusicicon" src="static/styles/Assets/othermusic.png" alt="OtherMusic">
+                    <div class="music">Other Songs</div>
+                </button>
+            </a>
+        </div>
+    </nav>
+</body>
