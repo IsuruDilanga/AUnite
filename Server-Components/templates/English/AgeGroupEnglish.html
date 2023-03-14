@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <link rel="icon" type="image/x-icon" href="/static/styles/Assets/AUnite Logo without wording.png">
+    <title>AUnite</title>
+
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='styles/English/AgeGroupEnglish.css') }}">
+  </head>
+
+  <body>
+    <nav class="nav-bar">
+      <a href="{{url_for('education')}}">
+          <img class="PreviousIcon" src="/static/styles/Assets/previous.png" alt="PreviousIcon">
+      </a>
+      <h1 class="backLabel">Back</h1>
+      <div class="right-align">
+          <a href="/HomePage.html">
+              <img class="homeImage" src="/static/styles/Assets/HomePageIcon.png" alt="home-image">
+          </a>
+          <h2 class="homeLabel">Home</h2>
+      </div>
+    </nav>
+    <div class="sec-card">
+      <div class="grid">
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/static/styles/Assets/abc.png"" alt="Alphabets" />
+            <div class="card-content">
+              <a href="{{url_for('alphabet')}}">
+              <button class="card-btn">Alphabets <span>&rarr;</span></button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/static/styles/Assets/Numbers.png" alt="Numbers" />
+            <div class="card-content">
+              <a href="{{url_for('numbers')}}">
+              <button class="card-btn">Numbers <span>&rarr;</span></button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/static/styles/Assets/colours.png" alt="Colours" />
+            <div class="card-content">
+              <a href="{{url_for('colours')}}">
+              <button class="card-btn">Colours <span>&rarr;</span></button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/static/styles/Assets/fruit.png" alt="Fruits" />
+            <div class="card-content">
+              <a href="{{url_for('fruits')}}">
+              <button class="card-btn">Fruits <span>&rarr;</span></button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/static/styles/Assets/vegetables.png" alt="Vegetables" />
+            <div class="card-content">
+              <a href="{{url_for('vegetables')}}">
+              <button class="card-btn">Vegetables <span>&rarr;</span></button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/static/styles/Assets/Animals.png" alt="Animals" />
+            <div class="card-content">
+              <a href="{{url_for('animals')}}">
+              <button class="card-btn">Animals <span>&rarr;</span></button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

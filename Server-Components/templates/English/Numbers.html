@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <link rel="icon" type="image/x-icon" href="../Assets/AUnite Logo without wording.png">
+    <title>AUnite</title>
+
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='styles/English/Numbers.css') }}">
+  
+  </head>
+
+  <body>
+    <nav class="nav-bar">
+      <a href="{{url_for('english')}}">
+          <img class="PreviousIcon" src="/static/styles/Assets/previous.png" alt="PreviousIcon">
+      </a>
+      <h1 class="backLabel">Back</h1>
+      <div class="right-align">
+          <a href="/HomePage.html">
+              <img class="homeImage" src="/static/styles/Assets/HomePageIcon.png" alt="home-image">
+          </a>
+          <h2 class="homeLabel">Home</h2>
+      </div>
+    </nav>
+    <div class="sec-card">
+      <div class="grid">
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/static/styles/Assets/One.png"" alt="One" />
+            <div class="card-content">
+              <audio id="audio1" src="/static/styles/Pronounciations/One.mp3"></audio>
+              <button class="card-btn" id="One">One </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/static/styles/Assets/Two.png" alt="Two" />
+            <div class="card-content">
+              <audio id="audio2" src="/static/styles/Pronounciations/Two.mp3"></audio>
+              <button class="card-btn" id="Two">Two </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/static/styles/Assets/Three.png" alt="Three" />
+            <div class="card-content">
+              <audio id="audio3" src="/static/styles/Pronounciations/Three.mp3"></audio>
+              <button class="card-btn" id="Three">Three </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/static/styles/Assets/Four.png" alt="Four" />
+            <div class="card-content">
+              <audio id="audio4" src="/static/styles/Pronounciations/Four.mp3"></audio>
+              <button class="card-btn" id="Four">Four </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/static/styles/Assets/Five.png" alt="Five" />
+            <div class="card-content">
+              <audio id="audio5" src="/static/styles/Pronounciations/Five.mp3"></audio>
+              <button class="card-btn" id="Five">Five </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/static/styles/Assets/Six.png" alt="Six" />
+            <div class="card-content">
+              <audio id="audio6" src="/static/styles/Pronounciations/Six.mp3"></audio>
+              <button class="card-btn" id="Six">Six </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/static/styles/Assets/Seven.png" alt="Seven" />
+            <div class="card-content">
+              <audio id="audio7" src="/static/styles/Pronounciations/Seven.mp3"></audio>
+              <button class="card-btn" id="Seven">Seven </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/static/styles/Assets/Eight.png" alt="Eight" />
+            <div class="card-content">
+              <audio id="audio8" src="/static/styles/Pronounciations/Eight.mp3"></audio>
+              <button class="card-btn" id="Eight">Eight </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/static/styles/Assets/Nine.png" alt="Nine" />
+            <div class="card-content">
+              <audio id="audio9" src="/static/styles/Pronounciations/Nine.mp3"></audio>
+              <button class="card-btn" id="Nine">Nine </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/static/styles/Assets/10.png" alt="Ten" />
+            <div class="card-content">
+              <audio id="audio10" src="/static/styles/Pronounciations/Ten.mp3"></audio>
+              <button class="card-btn" id="Ten">Ten </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- for second age  -->
+        <div id="secondAge">
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/eleven.png" alt="Eleven" />
+              <div class="card-content">
+                <audio id="audio11" src="/static/styles/Pronounciations/Eleven.mp3"></audio>
+                <button class="card-btn" id="Eleven">Eleven </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/twelve.png" alt="Twelve" />
+              <div class="card-content">
+                <audio id="audio12" src="/static/styles/Pronounciations/Twelve.mp3"></audio>
+                <button class="card-btn" id="Twelve">Twelve </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/thirteen.png" alt="Thirteen" />
+              <div class="card-content">
+                <audio id="audio13" src="/static/styles/Pronounciations/Thirteen.mp3"></audio>
+                <button class="card-btn" id="Thirteen">Thirteen </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/fourteen.png" alt="Fourteen" />
+              <div class="card-content">
+                <audio id="audio14" src="/static/styles/Pronounciations/Fourteen.mp3"></audio>
+                <button class="card-btn" id="Fourteen">Fourteen </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/fifteen.png" alt="Fifteen" />
+              <div class="card-content">
+                <audio id="audio15" src="/static/styles/Pronounciations/Fifteen.mp3"></audio>
+                <button class="card-btn" id="Fifteen">Fifteen </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/sixteen.png" alt="Sixteen" />
+              <div class="card-content">
+                <audio id="audio16" src="/static/styles/Pronounciations/Sixteen.mp3"></audio>
+                <button class="card-btn" id="Sixteen">Sixteen </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/seventeen.png" alt="Seventeen" />
+              <div class="card-content">
+                <audio id="audio17" src="/static/styles/Pronounciations/Seventeen.mp3"></audio>
+                <button class="card-btn" id="Seventeen">Seventeen </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/eighteen.png" alt="Eighteen" />
+              <div class="card-content">
+                <audio id="audio18" src="/static/styles/Pronounciations/Eighteen.mp3"></audio>
+                <button class="card-btn" id="Eighteen">Eighteen </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/nineteen.png" alt="Nineteen" />
+              <div class="card-content">
+                <audio id="audio19" src="/static/styles/Pronounciations/Nineteen.mp3"></audio>
+                <button class="card-btn" id="Nineteen">Nineteen </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/twenty.png" alt="Twenty" />
+              <div class="card-content">
+                <audio id="audio20" src="/static/styles/Pronounciations/Twenty.mp3"></audio>
+                <button class="card-btn" id="Twenty">Twenty </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- for tird age  -->
+        <div id="thirdAge">
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/twenty-one.png" alt="Twenty-one" />
+              <div class="card-content">
+                <audio id="audio21" src="/static/styles/Pronounciations/Twenty-one.mp3"></audio>
+                <button class="card-btn" id="Twenty-one">Twenty-one </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/twenty-two.png" alt="Twenty-two" />
+              <div class="card-content">
+                <audio id="audio22" src="/static/styles/Pronounciations/Twenty-two.mp3"></audio>
+                <button class="card-btn" id="Twenty-two">Twenty-two </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/twenty-three.png" alt="Twenty-three" />
+              <div class="card-content">
+                <audio id="audio23" src="/static/styles/Pronounciations/Twenty-three.mp3"></audio>
+                <button class="card-btn" id="Twenty-three">Twenty-three </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/twenty-four.png" alt="Twenty-four" />
+              <div class="card-content">
+                <audio id="audio24" src="/static/styles/Pronounciations/Twenty-four.mp3"></audio>
+                <button class="card-btn" id="Twenty-four">Twenty-four </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/twenty-five.png" alt="Twenty-five" />
+              <div class="card-content">
+                <audio id="audio25" src="/static/styles/Pronounciations/Twenty-five.mp3"></audio>
+                <button class="card-btn" id="Twenty-five">Twenty-five </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/twenty-six.png" alt="Twenty-six" />
+              <div class="card-content">
+                <audio id="audio26" src="/static/styles/Pronounciations/Twenty-six.mp3"></audio>
+                <button class="card-btn" id="Twenty-six">Twenty-six </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/twenty-seven.png" alt="Twenty-seven" />
+              <div class="card-content">
+                <audio id="audio27" src="/static/styles/Pronounciations/Twenty-seven.mp3"></audio>
+                <button class="card-btn" id="Twenty-seven">Twenty-seven </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/twenty-eight.png" alt="Twenty-eight" />
+              <div class="card-content">
+                <audio id="audio28" src="/static/styles/Pronounciations/Twenty-eight.mp3"></audio>
+                <button class="card-btn" id="Twenty-eight">Twenty-eight </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/twenty-nine.png" alt="Twenty-nine" />
+              <div class="card-content">
+                <audio id="audio29" src="/static/styles/Pronounciations/Twenty-nine.mp3"></audio>
+                <button class="card-btn" id="Twenty-nine">Twenty-nine </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/thirty.png" alt="Thirty" />
+              <div class="card-content">
+                <audio id="audio30" src="/static/styles/Pronounciations/Thirty.mp3"></audio>
+                <button class="card-btn" id="Thirty">Thirty </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/thirty-one.png" alt="Thirty-one" />
+              <div class="card-content">
+                <audio id="audio31" src="/static/styles/Pronounciations/Thirty-one.mp3"></audio>
+                <button class="card-btn" id="Thirty-one">Thirty-one </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/thirty-two.png" alt="Thirty-two" />
+              <div class="card-content">
+                <audio id="audio32" src="/static/styles/Pronounciations/Thirty-two.mp3"></audio>
+                <button class="card-btn" id="Thirty-two">Thirty-two </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/thirty-three.png" alt="Thirty-three" />
+              <div class="card-content">
+                <audio id="audio33" src="/static/styles/Pronounciations/Thirty-three.mp3"></audio>
+                <button class="card-btn" id="Thirty-three">Thirty-three </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/thirty-four.png" alt="Thirty-four" />
+              <div class="card-content">
+                <audio id="audio34" src="/static/styles/Pronounciations/Thirty-four.mp3"></audio>
+                <button class="card-btn" id="Thirty-four">Thirty-four </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/thirty-five.png" alt="Thirty-five" />
+              <div class="card-content">
+                <audio id="audio35" src="/static/styles/Pronounciations/Thirty-five.mp3"></audio>
+                <button class="card-btn" id="Thirty-five">Thirty-five </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/thirty-six.png" alt="Thirty-six" />
+              <div class="card-content">
+                <audio id="audio36" src="/static/styles/Pronounciations/Thirty-six.mp3"></audio>
+                <button class="card-btn" id="Thirty-six">Thirty-six </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/thirty-seven.png" alt="Thirty-seven" />
+              <div class="card-content">
+                <audio id="audio37" src="/static/styles/Pronounciations/Thirty-seven.mp3"></audio>
+                <button class="card-btn" id="Thirty-seven">Thirty-seven </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/thirty-eight.png" alt="Thirty-eight" />
+              <div class="card-content">
+                <audio id="audio38" src="/static/styles/Pronounciations/Thirty-eight.mp3"></audio>
+                <button class="card-btn" id="Thirty-eight">Thirty-eight </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/thirty-nine.png" alt="Thirty-nine" />
+              <div class="card-content">
+                <audio id="audio39" src="/static/styles/Pronounciations/Thirty-nine.mp3"></audio>
+                <button class="card-btn" id="Thirty-nine">Thirty-nine </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/forty.png" alt="Forty" />
+              <div class="card-content">
+                <audio id="audio40" src="/static/styles/Pronounciations/Forty.mp3"></audio>
+                <button class="card-btn" id="Forty">Forty </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="{{url_for('static', filename='script/English/Numbers.js')}}"></script>
+    <script src="{{url_for('static', filename='script/English/english.js')}}"></script>
+  </body>
+</html>
