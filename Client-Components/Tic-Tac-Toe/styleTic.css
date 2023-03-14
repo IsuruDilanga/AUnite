@@ -1,0 +1,214 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: #FFF3B5;
+}
+
+html {
+    font-size: 16px;
+}
+
+
+.nav-bar {
+    height: 120px;
+    /* display: inline; */
+    /* width: 100%; */
+    /* justify-content: center; */
+    /* justify-content: space-between; */
+}
+  
+.AUnite{
+    position: relative;
+    width: 80px;
+    height: 99px;
+    left: 25px;
+    top: 25px;
+    /* left: 37px;
+    top: 550px; */
+}
+  
+.AUniteWording{
+    position: relative;
+    width: 400px;
+    margin-top: 0;
+    /* height: 50px; */
+    left: 120px;
+    bottom: 28px;
+    line-height: 22px;
+    /* top: 30px; */
+  
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 35px;
+  
+    color: #000000;
+}
+  
+.autistic-word{
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-weight: 400;
+}
+  
+  
+.right-align{
+    text-align: right;
+    justify-content: right;
+}
+  
+.homeImage{
+    position: relative;
+    width: 56px;
+    height: 57px;
+    bottom: 110px;
+    right: 75px;
+}
+  
+.homeLable{
+    position: relative;
+    right: 80px;
+    bottom: 115px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+  
+.heading{
+    /* position: relative; */
+    color: #44140f;
+    margin-top: 0px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 70px;
+}
+
+.wrapper {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 80%;
+    left: 50%;
+}
+
+.container {
+    width: 70vmin;
+    height: 70vmin;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vmin;
+    
+}
+
+.button-option {
+    background: #f9a72b;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height: 22vmin;
+    width: 22vmin;
+    border: none;
+    border-radius: 8px;
+    font-size: 12vmin;
+    color: #44140f;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#restart {
+    font-size: 1.3em;
+    padding: 0.5em;
+    color: #44140f;
+    border: none;
+    position: relative;
+    margin: 1.5em auto 0 auto;
+    display: block;
+    background: linear-gradient(to bottom right, #fdff82, #ff924e);
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    line-height: 2.5;
+    outline: transparent;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    width: 200px;
+}
+
+#restart:not([disabled]):focus {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+  
+#restart:not([disabled]):hover {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.popup {
+    background: #FFF3B5;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1em;
+    font-size: 12vmin;
+}
+
+#new-game {
+
+    background: linear-gradient(to bottom right, #fdff82, #ff924e);
+    border: 0;
+    border-radius: 12px;
+    color: #44140f;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    line-height: 2;
+    margin-top: 0px;
+    outline: transparent;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    width: 400px;
+    font-size: 0.6em;
+    padding: 0.5em 1em;
+}
+
+#new-game:not([disabled]):focus {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+  
+#new-game:not([disabled]):hover {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+#message {
+    color: #44140f;
+    text-align: center;
+    font-size: 1em;
+}
+
+.popup.hide {
+    display: none;
+}
