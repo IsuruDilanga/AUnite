@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maths with Fun</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='styles/Maths/AgeGroupMaths3/AgeGroupMaths4.css') }}">
+      
+  </head>    
+  <body>
+    <nav class="nav-bar">
+        <a href="{{url_for('education')}}">
+          <img class="PreviousIcon" src="/static/styles/Assets/previous.png" alt="PreviousIcon">
+        </a>
+        <h1 class="backLabel">Back</h1>
+        <div class="right-align">
+            <a href="/HomePage.html">
+                <img class="homeImage" src="/static/styles/Assets/HomePageIcon.png" alt="home-image">
+            </a>
+            <h2 class="homeLabel">Home</h2>
+        </div>
+    </nav>
+        <div id="container">
+            <div id="score">
+                score: <span id="scorevalue" style="font-weight: 900">0</span>
+            </div>
+            <div id="correct">
+                Correct!
+            </div>
+            <div id="wrong">
+                Try again!
+            </div>
+            <div id="question">
+                
+            </div>
+            <div id="instruction">
+                Click on the correct answer.
+            </div>
+            <div id="choices">
+                
+                <div id="box1" class="box"> </div>
+                <div id="box2" class="box">	</div>
+                <div id="box3" class="box">	</div>
+                <div id="box4" class="box">	</div>	
+            </div>
+            <div id="startreset">
+                Start Game
+            </div>
+            <div id="timeremaining">
+                Time remaining:   <span id="timeremainingvalue" style="font-family: sans seriff; font-weight: bold; color: black;">  60</span>
+            </div>
+            <div id="gameOver">
+                
+            </div>
+        </div>
+        <script src="{{url_for('static', filename='script/Maths/AgeGroupMaths3/AgeGroupMaths4.js')}}"></script>
+     
+  </body>
+    
+
+</html>
