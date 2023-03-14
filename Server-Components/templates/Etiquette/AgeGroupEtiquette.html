@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <link rel="icon" type="image/x-icon" href="/static/styles/Assets/AUnite Logo without wording.png">
+    <title>AUnite</title>
+
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='styles/Etiquette/AgeGroupEtiquette.css') }}">
+  
+  </head>
+
+  <body>
+    <nav class="nav-bar">
+      <a href="{{url_for('education')}}">
+          <img class="PreviousIcon" src="/static/styles/Assets/previous.png" alt="PreviousIcon">
+      </a>
+      <h1 class="backLabel">Back</h1>
+      <div class="right-align">
+          <a href="/HomePage.html">
+              <img class="homeImage" src="/static/styles/Assets/HomePageIcon.png" alt="home-image">
+          </a>
+          <h2 class="homeLabel">Home</h2>
+      </div>
+    </nav>
+    <div class="items">
+      <div class="grid">
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/static/styles/Assets/goodManners.png"" alt="Alphabets" />
+            <div class="card-content">
+              <a href="{{url_for('goodManner')}}">
+              <button class="card-btn">Good Manners <span>&rarr;</span></button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/static/styles/Assets/handshake.png" alt="Numbers" />
+            <div class="card-content">
+              <a href="{{url_for('socialManner')}}">
+              <button class="card-btn">Social Manners <span>&rarr;</span></button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/static/styles/Assets/table-etiquette.png" alt="Colours" />
+            <div class="card-content">
+              <a href="{{url_for('tableManner')}}">
+              <button class="card-btn">Table Manners <span>&rarr;</span></button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>
