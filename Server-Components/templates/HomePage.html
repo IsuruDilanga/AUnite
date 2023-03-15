@@ -23,7 +23,7 @@
             <li><a href="{{ url_for('home') }}"><img src="/static/styles/Assets/HomePageIcon.png"> <span>Home</span></a></li>
             <li><a href="{{ url_for('home') }}"><img src="/static/styles/Assets/Sections.png"> <span>Sections</span></a></li>
             <li><a href="{{ url_for('progress') }}"><img src="/static/styles/Assets/Progress.png"> <span>My Progress</span></a></li>
-            <li><a href="/AboutUs.html"><img src="/static/styles/Assets/AboutUs.png"> <span>About us</span></a></li>
+            <li><a href="{{ url_for('aboutUs') }}"><img src="/static/styles/Assets/AboutUs.png"> <span>About us</span></a></li>
         </ul>
     </div>
     <div class="navbar-right">
@@ -109,7 +109,7 @@
 
         <a href="{{ url_for('meetTeam')}}">Meet our Team</a>
 
-        <a href="/AboutUs.html">About AUnite</a>
+        <a href="{{ url_for('aboutUs') }}">About AUnite</a>
       </p>
 
 

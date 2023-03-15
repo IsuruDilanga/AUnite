@@ -12,7 +12,7 @@
 
 <body>
     <nav>
-        <a href="#">
+        <a href="{{ url_for('home')}}">
             <img class="MusicIcon" src="static/styles/Assets/MusicIcon.png" alt="EntertainmentIcon">
         </a>
         <h1 class="MusicWording">
@@ -24,7 +24,7 @@
         </div>
 
         <div class="right-align">
-            <a href="HomePage.html">
+            <a href="{{ url_for('home')}}">
                 <img class="HomePageIcon" src="static/styles/Assets/HomePageIcon.png" alt="HomePageIcon">
             </a>
             <h2 class="homeLable">Home</h2>

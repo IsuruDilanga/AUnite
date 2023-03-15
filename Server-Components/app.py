@@ -546,5 +546,26 @@ def progress():
     
     return render_template('Progress.html', fullname=fullname, email=email, english=english, etiquette=etiquette)
 
+@app.route('/aboutUs')
+def aboutUs():
+    return render_template('AboutUs.html')
+
+@app.route('/music')
+def music():
+    return render_template('music.html')
+
+@app.route('/CMusic')
+def CMusic():
+    return render_template('CMusic.html')
+
+@app.route('/KMusic')
+def KMusic():
+    return render_template('KMusic.html')
+
+@app.route('/OMusic')
+def OMusic():
+    return render_template('OMusic.html')
+
+
 if __name__ == '__main__':
     app.run(port=4000, debug=True)
