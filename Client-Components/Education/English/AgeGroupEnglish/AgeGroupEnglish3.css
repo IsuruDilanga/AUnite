@@ -13,37 +13,37 @@ html {
 body {
   background-color: #FFF3B5;
   font-family: "Poppins", sans-serif;
-  display: flex;
+  overflow-x: hidden;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
 
+.sec-card {
+  display: flex;
+  margin-left: 8%;
+}
+
 .nav-bar {
-  height: 120px;
-  /* display: inline; */
-  /* width: 100%; */
-  /* justify-content: center; */
-  /* justify-content: space-between; */
+  height: 160px;
 }
 
 .PreviousIcon{
   position: relative;
   width: 56px;
-  height: 57px;
-  bottom: 350px;
-  right: 200px;
+  left: 30px;
+  top: 30px;
 }
 
 .backLabel{
   position: relative;
-  right: 195px;
-  bottom: 350px;
+  left: 32px;
+  top: 35px;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 20px;
 }
-
 
 .right-align{
   text-align: right;
@@ -54,14 +54,14 @@ body {
   position: relative;
   width: 55px;
   height: 65px;
-  bottom: 433px;
+  bottom: 40px;
   right: 75px;
 }
 
-.homeLable{
+.homeLabel{
   position: relative;
   right: 75px;
-  bottom: 442px;
+  bottom: 40px;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 20px;

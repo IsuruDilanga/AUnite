@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotional Intelligence</title>
+
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/EQ.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+</head>
+<body>
+
+    <nav class="nav-bar">
+        <a href="{{ url_for('home') }}">
+            <img class="AUnite" src="/static/styles/Image/EQ.png" alt="AUnite">
+        </a>
+        <h1 class="AUniteWording">
+            Emotional Intelligence
+        </h1>
+        <div class="right-align">
+            <a href="{{ url_for('home') }}">
+                <img class="homeImage" src="/static/styles/Image/homeImage.png" alt="home-image">
+            </a>
+            <h2 class="homeLable">Home</h2>
+        </div>
+    </nav>
+    <div class="backgroundImg">
+        <img  src="/static/styles/Image/smile.png" alt="SmileImage" >
+    </div>
+
+    <h1 id="heading" class="heading">
+        text
+    </h1>
+    
+    <div class="EQ-video">
+        <video id="EQ-video" width="400" height="400" controls autoplay>
+            <!-- <source src='http://127.0.0.1:4000/static/styles/videos/Angry1.mp4' type='video/mp4'> -->
+            <source src='{{ video }}' type='video/mp4'>
+        </video>
+    </div>
+    
+    <script>
+        var data = JSON.parse('{{data|safe}}');
+        var header = document.getElementById('heading');
+        var video = document.getElementById('EQ-video');
+
+        for (var i = 0; i < data.length; i++){
+            header.innerHTML = data[i].EQWording;
+            video.src = '/static/styles/videos/' + data[i].ShortMotivationVideo;
+
+        }
+
+        
+    </script>
+</body>
+</html>
