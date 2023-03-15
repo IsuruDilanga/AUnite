@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="Assets/AUnite Logo without wording.png">
+    <title>AUnite</title>
+
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='styles/Education.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav-bar">
+        <a href="{{ url_for('education') }}">
+            <img class="LearningIcon" src="/static/styles/Assets/LearningIcon.png" alt="LearningIcon">
+        </a>
+        <h1 class="EducationWording">
+            Education
+        </h1>
+        <div class="right-align">
+            <a href="{{ url_for('home') }}">
+                <img class="homeImage" src="/static/styles/Assets/HomePageIcon.png" alt="home-image">
+            </a>
+            <h2 class="homeLable">Home</h2>
+        </div>
+    </nav>
+    
+    <div class="grid">
+        <div class="cardContainer inactive">
+            <div class="card">
+                <div class="side front">
+                  <img class="card-img" src="/static/styles/Assets/maths.png" alt="Maths" />
+                  <div class="card-content">
+                    <h1 class="card-header">Mathematics</h1>
+                    
+                    <button class="card-btn">Learn <span>&rarr;</span></button>
+                  </div>
+                </div>
+                <div class="side back">
+                    <div class="info">
+                    <h2>Age Category</h2>
+                    <ul>
+                        <li>Please select your age</li>
+                        
+                    </ul>
+                    <a href="{{url_for('maths1')}}">
+                        <button class="button-62" >Ages 5-7</button>
+                    </a>
+                    <br>
+                    <a href="{{url_for('maths2')}}">
+                        <button class="button-62">Ages 7-10</button>
+                    </a>
+                    <a href="{{url_for('maths3')}}">
+                        <button class="button-62">Ages 11-12</button>
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cardContainer inactive">
+          <div class="card">
+              <div class="side front">
+                <img class="card-img" src="/static/styles/Assets/English.png" alt="English" />
+                <div class="card-content">
+                  <h1 class="card-header">English</h1>
+                  
+                  <button class="card-btn">Learn <span>&rarr;</span></button>
+                </div>
+              </div>
+              <div class="side back">
+                  <div class="info">
+                  <h2>Age Category</h2>
+                  <ul>
+                      <li>Please select your age</li>
+                      
+                  </ul>
+                  <a href="{{url_for('english')}}">
+                      <button class="button-62" onclick="storeAge('5-7')">Ages 5-7</button>
+                  </a>
+                  <br>
+                  <a href="{{url_for('english')}}">
+                      <button class="button-62" onclick="storeAge('7-10')">Ages 7-10</button>
+                  </a>
+                  <a href="{{url_for('english')}}">
+                      <button class="button-62" onclick="storeAge('11-12')">Ages 11-12</button>
+                  </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="cardContainer inactive">
+        <div class="card">
+            <div class="side front">
+              <img class="card-img" src="/static/styles/Assets/etiquette.png" alt="Etiquette" />
+              <div class="card-content">
+                <h1 class="card-header">Etiquette</h1>
+                
+                <button class="card-btn">Learn <span>&rarr;</span></button>
+              </div>
+            </div>
+            <div class="side back">
+                <div class="info">
+                <h2>Age Category</h2>
+                <ul>
+                    <li>Please select your age</li>
+                   
+                </ul>
+                <a href="{{url_for('etiquette')}}">
+                    <button class="button-62" onclick="storeAge('5-7')">Ages 5-7</button>
+                </a>
+                <br>
+                <a href="{{url_for('etiquette')}}">
+                    <button class="button-62" onclick="storeAge('7-10')">Ages 7-10</button>
+                </a>
+                <a href="{{url_for('etiquette')}}">
+                    <button class="button-62" onclick="storeAge('11-12')">Ages 11-12</button>
+                </a>
+                </div>
+            </div>
+        </div>
+      </div>
+      
+      </div>
+    </div>
+    <script src="{{url_for('static', filename='script/Education.js')}}"></script>
+</body>
+</html>

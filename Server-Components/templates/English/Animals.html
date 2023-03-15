@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <link rel="icon" type="image/x-icon" href="/static/styles/Assets/AUnite Logo without wording.png">
+    <title>AUnite</title>
+
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='styles/English/Animals.css') }}">
+  
+  </head>
+
+  <body>
+    <nav class="nav-bar">
+      <a href="{{url_for('english')}}">
+          <img class="PreviousIcon" src="/static/styles/Assets/previous.png" alt="PreviousIcon">
+      </a>
+      <h1 class="backLabel">Back</h1>
+      <div class="right-align">
+          <a href="{{ url_for('home') }}">
+              <img class="homeImage" src="/static/styles/Assets/HomePageIcon.png" alt="home-image">
+          </a>
+          <h2 class="homeLabel">Home</h2>
+      </div>
+    </nav>
+    <div class="sec-card">
+      <div class="grid">
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/static/styles/Assets/cat.png"" alt="Cat" />
+            <div class="card-content">
+              <audio id="audio1" src="/static/styles/Pronounciations/Cat.mp3"></audio>
+              <button class="card-btn" id="Cat">Cat </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/static/styles/Assets/dog.png" alt="Dog" />
+            <div class="card-content">
+              <audio id="audio2" src="/static/styles/Pronounciations/Dog.mp3"></audio>
+              <button class="card-btn" id="Dog">Dog </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/static/styles/Assets/rabbit.png" alt="Rabbit" />
+            <div class="card-content">
+              <audio id="audio3" src="/static/styles/Pronounciations/Rabbit.mp3"></audio>
+              <button class="card-btn" id="Rabbit">Rabbit </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/static/styles/Assets/elephant.png" alt="Elephant" />
+            <div class="card-content">
+              <audio id="audio4" src="/static/styles/Pronounciations/Elephant.mp3"></audio>
+              <button class="card-btn" id="Elephant">Elephant </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/static/styles/Assets/zebra.png" alt="Zebra" />
+            <div class="card-content">
+              <audio id="audio5" src="/static/styles/Pronounciations/Zebra.mp3"></audio>
+              <button class="card-btn" id="Zebra">Zebra </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/static/styles/Assets/giraffe.png" alt="Giraffe" />
+            <div class="card-content">
+              <audio id="audio6" src="/static/styles/Pronounciations/Giraffe.mp3"></audio>
+              <button class="card-btn" id="Giraffe">Giraffe </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- for second age  -->
+        <div id="secondAge">
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/lion.png" alt="Lion" />
+              <div class="card-content">
+                <audio id="audio7" src="/static/styles/Pronounciations/Lion.mp3"></audio>
+                <button class="card-btn" id="Lion">Lion </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/tiger.png" alt="Tiger" />
+              <div class="card-content">
+                <audio id="audio8" src="/static/styles/Pronounciations/Tiger.mp3"></audio>
+                <button class="card-btn" id="Tiger">Tiger </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/sheep.png" alt="Sheep" />
+              <div class="card-content">
+                <audio id="audio9" src="/static/styles/Pronounciations/Sheep.mp3"></audio>
+                <button class="card-btn" id="Sheep">Sheep </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- for tird age  -->
+        <div id="thirdAge">
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/goat.png" alt="Goat" />
+              <div class="card-content">
+                <audio id="audio10" src="/static/styles/Pronounciations/Goat.mp3"></audio>
+                <button class="card-btn" id="Goat">Goat </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/donkey.png" alt="Donkey" />
+              <div class="card-content">
+                <audio id="audio11" src="/static/styles/Pronounciations/Donkey.mp3"></audio>
+                <button class="card-btn" id="Donkey">Donkey </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img class="card-img" src="/static/styles/Assets/cow.png" alt="Cow" />
+              <div class="card-content">
+                <audio id="audio12" src="/static/styles/Pronounciations/Cow.mp3"></audio>
+                <button class="card-btn" id="Cow">Cow </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="{{url_for('static', filename='script/English/Animals.js')}}"></script>
+    <script src="{{url_for('static', filename='script/English/english.js')}}"></script>
+  </body>
+</html>

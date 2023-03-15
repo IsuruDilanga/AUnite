@@ -20,9 +20,9 @@
     </div>
     <div class="navbar-center">
         <ul>
-            <li><a href="/HomePage.html"><img src="/static/styles/Assets/HomePageIcon.png"> <span>Home</span></a></li>
-            <li><a href="/HomePage.html"><img src="/static/styles/Assets/Sections.png"> <span>Sections</span></a></li>
-            <li><a href="/Progress.html"><img src="/static/styles/Assets/Progress.png"> <span>My Progress</span></a></li>
+            <li><a href="{{ url_for('home') }}"><img src="/static/styles/Assets/HomePageIcon.png"> <span>Home</span></a></li>
+            <li><a href="{{ url_for('home') }}"><img src="/static/styles/Assets/Sections.png"> <span>Sections</span></a></li>
+            <li><a href="{{ url_for('progress') }}"><img src="/static/styles/Assets/Progress.png"> <span>My Progress</span></a></li>
             <li><a href="/AboutUs.html"><img src="/static/styles/Assets/AboutUs.png"> <span>About us</span></a></li>
         </ul>
     </div>
@@ -40,7 +40,7 @@
             <img src="/static/styles/Assets/settings.png">
             <div>
                 <h3>{{ fullname }}</h3>
-                <a href="#">View your profile</a>
+                <a href="{{url_for('userProfile')}}">View your profile</a>
             </div>
         </div>
         <hr>
@@ -74,7 +74,7 @@
         <img src="/static/styles/Assets/text-books(Big).png" alt="" class="imgMain3"/>
         <h1> Education </h1>
         
-        <a href="Education.html"><button>Let's Learn</button></a>
+        <a href="{{ url_for('education') }}"><button>Let's Learn</button></a>
       </div>
     </div>
 
@@ -85,17 +85,19 @@
         <h1 class="rightH2">
           Improve your <br> Emotional <br> Intelligence</span>
         </h1>
-       <a href="EI.html"><button class="rightBtn2">Click Here</button></a> 
+       <a href="{{ url_for('eq') }}"><button class="rightBtn2">Click Here</button></a> 
       </div>
       <div class="rightImage">
         <img src="/static/styles/Assets/EN1.png" alt="" class="imgMain" />
         <h1 class="rightH1">
             Entertainment
         </h1>
-        <a href="Entertainment.html"><button class="rightBtn">Click Here</button></a> 
+        <a href="{{url_for('entertainment')}}"><button class="rightBtn">Click Here</button></a> 
       </div>
     </div>
   </div>
+  
+  <input type="hidden" value="{{total}}" id="total">
 
   <!-- Footer  -->
 
@@ -105,7 +107,7 @@
       <p class="footer-links">
         <a class="link-1" href="{{ url_for('home') }}">Home</a>
 
-        <a href="/MeetTeams.html">Meet our Team</a>
+        <a href="{{ url_for('meetTeam')}}">Meet our Team</a>
 
         <a href="/AboutUs.html">About AUnite</a>
       </p>

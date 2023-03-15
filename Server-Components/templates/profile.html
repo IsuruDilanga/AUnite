@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='styles/profile.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('home') }}">
+            <img class="AUnite" src="/static/styles/Assets/profileicon.png" alt="AUnite">
+        </a>
+        <h1 class="AUniteWording">
+            User Profile
+        </h1>
+
+        <div class="right-align">
+            <a href="{{ url_for('home') }}">
+                <!-- <img class="homeImage" src="/Image/homeImage.png" alt="home-image"> -->
+                <img class="homeImage" src="/static/styles/Assets/HomePageIcon.png" alt="home-image">
+            </a>
+            <h2 class="homeLable">Home</h2>
+        </div>
+    </nav>
+
+    <div class="details">
+        <div class="profilPhoto">
+            <img class="profilepic" src="/static/styles/Assets/profileimage.png" alt="Pic">
+        </div>
+        <div class="userDetails">
+            <table>
+                <tr class="name">
+                    <td>Name:</td>
+                    <td>{{ fullname }}</td>
+                </tr>
+                <tr class="dob">
+                    <td>DOB: </td>
+                    <td>{{ dob }}</td>
+                </tr>
+                <tr  class="email">
+                    <td>Email: </td>
+                    <td>{{ email }}</td>
+                </tr>
+                <tr  class="Number">
+                    <td>Number: </td>
+                    <td>{{ number }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
