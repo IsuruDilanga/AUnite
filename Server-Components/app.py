@@ -61,15 +61,23 @@ def login():
 
     if row:
         c1 = conn.cursor()
-        c1.execute('SELECT email, password, fullname, number, dob FROM user WHERE email=? AND password=?',(email, password))
+        c1.execute('SELECT email, password, fullname, number, dob, english, etiquette FROM user WHERE email=? AND password=?',(email, password))
+        # c1.execute('SELECT email, password, fullname, number, dob, English, Etiquette, total FROM user WHERE email=? AND password=?',(email, password))
+        
         row1 = c1.fetchone()
-        email, password, fullname, number, dob = row1
+        email, password, fullname, number, dob, english, etiquette = row1
+        # email, password, fullname, number, dob, English, Etiquette, total = row1
         # print("fullname="+fullname)
 
         session['fullname'] = fullname
         session['email'] = email
         session['number'] = number
         session['dob'] = dob
+        session['english'] = english
+        session['etiquette'] = etiquette
+        # session['English'] = English
+        # session['Etiquette'] = Etiquette
+        # session['total'] = total
         return redirect('/home')
     else:
         flash("Enter details are wrong! Please check again")
@@ -125,7 +133,26 @@ def signup():
 @app.route('/home')
 def home():
     fullname = session.get('fullname')
-    return render_template('HomePage.html', fullname=fullname)
+    email = session.get('email')
+    # total = str(session.get('total'))
+
+    conn = sqlite3.connect('AUnite.db')
+    c = conn.cursor()
+
+    c.execute('SELECT english, etiquette FROM user WHERE email=?',(email, ))
+    row = c.fetchone()
+    english, etiquette= row
+    
+    total = english + etiquette
+
+    c1 = conn.cursor()
+
+    c1.execute('UPDATE user SET total = ? WHERE email= ?', (total, email))
+    conn.commit()
+
+    total = str(total)
+
+    return render_template('HomePage.html', fullname=fullname, total=total)
 
 @app.route('/logout')
 def logout():
@@ -324,9 +351,40 @@ def english():
 def goodManner():
     return render_template('Etiquette/GoodManners.html')
 
+@app.route('/goodManner', methods=['POST'])
+def goodMannerMarks():
+    data = request.get_json()
+    intValue = data['marks']
+    intValueF = "%.2f" % intValue
+    print(intValueF)
+
+    email = session.get('email')
+
+    conn = sqlite3.connect('AUnite.db')
+    c = conn.cursor()
+
+    c.execute('UPDATE user SET etiquette = ? WHERE email= ?', (intValueF, email))
+    conn.commit()
+    return render_template('Etiquette/GoodManners.html')
 
 @app.route('/socialManner')
+def socialMannerMarks():
+    return render_template('Etiquette/SocialManners.html')
+
+@app.route('/socialManner', methods=['POST'])
 def socialManner():
+    data = request.get_json()
+    intValue = data['marks']
+    intValueF = "%.2f" % intValue
+    print(intValueF)
+
+    email = session.get('email')
+
+    conn = sqlite3.connect('AUnite.db')
+    c = conn.cursor()
+
+    c.execute('UPDATE user SET etiquette = ? WHERE email= ?', (intValueF, email))
+    conn.commit()
     return render_template('Etiquette/SocialManners.html')
 
 
@@ -334,29 +392,159 @@ def socialManner():
 def tableManner():
     return render_template('Etiquette/TableManners.html')
 
+@app.route('/tableManner', methods=['POST'])
+def tableMannerMarks():
+    data = request.get_json()
+    intValue = data['marks']
+    intValueF = "%.2f" % intValue
+    print(intValueF)
+
+    email = session.get('email')
+
+    conn = sqlite3.connect('AUnite.db')
+    c = conn.cursor()
+
+    c.execute('UPDATE user SET etiquette = ? WHERE email= ?', (intValueF, email))
+    conn.commit()
+    return render_template('Etiquette/TableManners.html')
+
 @app.route('/alphabet')
 def alphabet():
     return render_template('English/Alphabet.html')
 
+@app.route('/alphabet', methods=['POST'])
+def alphabetMarks():
+
+    data = request.get_json()
+    intValue = data['marks']
+    intValueF = "%.2f" % intValue
+    print(intValueF)
+    email = session.get('email')
+
+    conn = sqlite3.connect('AUnite.db')
+    c = conn.cursor()
+
+    c.execute('UPDATE user SET english = ? WHERE email= ?', (intValueF, email))
+    conn.commit()
+    # print(intValue)
+    return render_template('English/Alphabet.html')
+
+
 @app.route('/animals')
 def animals():
+    return render_template('English/Animals.html')
+
+@app.route('/animals', methods=['POST'])
+def animalsMarks():
+    data = request.get_json()
+    intValue = data['marks']
+    intValueF = "%.2f" % intValue
+    print(intValueF)
+    email = session.get('email')
+
+    conn = sqlite3.connect('AUnite.db')
+    c = conn.cursor()
+
+    c.execute('UPDATE user SET english = ? WHERE email= ?', (intValueF, email))
+    conn.commit()
     return render_template('English/Animals.html')
 
 @app.route('/colours')
 def colours():
     return render_template('English/Colours.html')
 
+@app.route('/colours', methods=['POST'])
+def coloursMarks():
+    data = request.get_json()
+    intValue = data['marks']
+    intValueF = "%.2f" % intValue
+    print(intValueF)
+    email = session.get('email')
+
+    conn = sqlite3.connect('AUnite.db')
+    c = conn.cursor()
+
+    c.execute('UPDATE user SET english = ? WHERE email= ?', (intValueF, email))
+    conn.commit()
+    return render_template('English/Colours.html')
+
 @app.route('/fruits')
 def fruits():
+    return render_template('English/Fruits.html')
+
+@app.route('/fruits', methods=['POST'])
+def fruitsMarks():
+    data = request.get_json()
+    intValue = data['marks']
+    intValueF = "%.2f" % intValue
+    print(intValueF)
+    email = session.get('email')
+
+    conn = sqlite3.connect('AUnite.db')
+    c = conn.cursor()
+
+    c.execute('UPDATE user SET english = ? WHERE email= ?', (intValueF, email))
+    conn.commit()
     return render_template('English/Fruits.html')
 
 @app.route('/numbers')
 def numbers():
     return render_template('English/Numbers.html')
 
+@app.route('/numbers', methods=['POST'])
+def numbersMarks():
+    data = request.get_json()
+    intValue = data['marks']
+    intValueF = "%.2f" % intValue
+    print(intValueF)
+    email = session.get('email')
+
+    conn = sqlite3.connect('AUnite.db')
+    c = conn.cursor()
+
+    c.execute('UPDATE user SET english = ? WHERE email= ?', (intValueF, email))
+    conn.commit()
+    return render_template('English/Numbers.html')
+
 @app.route('/vegetables')
 def vegetables():
     return render_template('English/Vegetables.html')
+
+@app.route('/vegetables', methods=['POST'])
+def vegetablesMarks():
+    data = request.get_json()
+    intValue = data['marks']
+    intValueF = "%.2f" % intValue
+    print(intValueF)
+    email = session.get('email')
+
+    conn = sqlite3.connect('AUnite.db')
+    c = conn.cursor()
+
+    c.execute('UPDATE user SET english = ? WHERE email= ?', (intValueF, email))
+    conn.commit()
+    return render_template('English/Vegetables.html')
+
+@app.route('/progress')
+def progress():
+    fullname = session.get('fullname')
+    email = session.get('email')
+
+    conn = sqlite3.connect('AUnite.db')
+    c = conn.cursor()
+
+    c.execute('SELECT email, fullname, english, etiquette, total FROM user WHERE email=?',(email, ))
+    row = c.fetchone()
+    email, fullname, english, etiquette, total = row
+
+    ## Read here sql and assign english value 
+    # english = str(session.get('english'))
+    # etiquette = str(session.get('etiquette'))
+    
+    print("english = " , english)
+    print("etiquette = " , etiquette)
+    
+    return render_template('Progress.html', fullname=fullname, email=email, english=english, etiquette=etiquette)
 
 if __name__ == '__main__':
     app.run(port=4000, debug=True)
