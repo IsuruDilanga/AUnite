@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'python test.py'
+                sh 'python Server-Components/test_app.py'
             }
         }
         stage('Deploy') {
