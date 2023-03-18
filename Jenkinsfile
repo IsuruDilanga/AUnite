@@ -15,15 +15,13 @@ pipeline {
     }
     stage('Test') {
       steps {
-        sh 'python -m unittest discover'
+        sh 'python3 -m unittest discover'
       }
     }
     stage('Deploy') {
       steps {
-        sh 'python app.py'
+        sh 'python3 app.py'
       }
     }
   }
 }
-
-
