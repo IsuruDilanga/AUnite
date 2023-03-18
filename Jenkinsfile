@@ -10,18 +10,20 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh 'pip install -r requirements.txt'
+        sh 'python -m pip install --upgrade pip'
+        sh 'python -m pip install -r requirements.txt'
       }
     }
     stage('Test') {
       steps {
-        sh 'python3 -m unittest discover'
+        sh 'python -m unittest discover'
       }
     }
     stage('Deploy') {
       steps {
-        sh 'python3 app.py'
+        sh 'python app.py'
       }
     }
   }
 }
+
