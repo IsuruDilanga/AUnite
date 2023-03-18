@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+
 
 from flask import Flask, flash, render_template, url_for, redirect, request, session
 
