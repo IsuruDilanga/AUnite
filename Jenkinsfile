@@ -27,11 +27,12 @@ pipeline {
     stage('Deploy') {
       steps {
         sh "pyenv global $PYTHON_VERSION"
-        sh 'python app.py &'
+        bat 'nohup python app.py > log.txt 2>&1 &'
       }
     }
   }
 }
+
 
 
 
