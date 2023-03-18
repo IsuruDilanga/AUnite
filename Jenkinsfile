@@ -21,9 +21,10 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'python app.py'
+        bat 'start /b python app.py'
       }
     }
   }
 }
+
 
