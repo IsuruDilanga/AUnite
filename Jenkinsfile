@@ -1,8 +1,5 @@
 pipeline {
   agent any
-  environment {
-    PYTHON_VERSION = '3.11.1'
-  }
   stages {
     stage('Checkout') {
       steps {
@@ -13,25 +10,22 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh "pyenv global $PYTHON_VERSION"
-        sh 'python -m pip install --upgrade pip'
-        sh 'python -m pip install -r requirements.txt'
+        sh 'pip install -r requirements.txt'
       }
     }
     stage('Test') {
       steps {
-        sh "pyenv global $PYTHON_VERSION"
         sh 'python -m unittest discover'
       }
     }
     stage('Deploy') {
       steps {
-        sh "pyenv global $PYTHON_VERSION"
-        bat 'nohup python app.py > log.txt 2>&1 &'
+        sh 'python app.py'
       }
     }
   }
 }
+
 
 
 
