@@ -22,9 +22,6 @@ jobs:
     - name: Install dependencies
       run: pip install -r requirements.txt
       
-    - name: Install application module
-      run: pip install .
-      
     - name: Run tests
       run: python Tests/Unit-Tests/test_app.py
 
