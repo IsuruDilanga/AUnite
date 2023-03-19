@@ -4,6 +4,7 @@ Flask_Login
 Flask_WTF
 Flask_Bcrypt
 Flask_Cors
+tensorflow
 opencv-python
 numpy
 keras
