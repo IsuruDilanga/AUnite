@@ -23,10 +23,7 @@ jobs:
       run: pip install -r requirements.txt
       
     - name: Run tests
-<<<<<<< HEAD
       run: python test_app.py
-=======
->>>>>>> d0536cf98f5a8f0a6c4da72b8bf2efb7b2272d1a
 
 
 
