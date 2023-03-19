@@ -1,5 +1,5 @@
 import unittest
-from app import app
+from Server-Components.app import app
 
 class TestFlaskRoutes(unittest.TestCase):
 
