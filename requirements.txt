@@ -7,3 +7,4 @@ Flask_Cors
 opencv-python
 numpy
 keras
+pytest
