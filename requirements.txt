@@ -1,0 +1,9 @@
+Flask
+Flask_SQLAlchemy
+Flask_Login
+Flask_WTF
+Flask_Bcrypt
+Flask_Cors
+opencv-python
+numpy
+keras
