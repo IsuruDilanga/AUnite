@@ -23,7 +23,7 @@ jobs:
       run: pip install -r requirements.txt
       
     - name: Run tests
-      run: python Server_Components/test_app.py
+      run: python .Sever_Components/test_app.py
 
 
 
