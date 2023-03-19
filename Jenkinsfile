@@ -4,7 +4,7 @@ pipeline {
     stage('Checkout') {
       steps {
         checkout([$class: 'GitSCM',
-                  branches: [[name: '*/main']],
+                  branches: [[name: '*/CICD-Test']],
                   userRemoteConfigs: [[url: 'https://github.com/IsuruDilanga/AUnite.git']]])
       }
     }
