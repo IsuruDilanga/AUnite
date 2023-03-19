@@ -23,6 +23,11 @@ pipeline {
         sh 'python app.py'
       }
     }
+    post {
+        always {
+            archiveArtifacts artifacts: 'requirements.txt'
+        }
+    }
   }
 }
 
