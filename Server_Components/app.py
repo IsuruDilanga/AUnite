@@ -21,7 +21,7 @@ import json
 
 import sqlite3
 
-with open('Server_Components/Model/FacialEmotionModel.json', 'r') as json_file:
+with open('Model/FacialEmotionModel.json', 'r') as json_file:
     loaded_model_json = json_file.read()
 
 
@@ -29,7 +29,7 @@ with open('Server_Components/Model/FacialEmotionModel.json', 'r') as json_file:
 loaded_model = model_from_json(loaded_model_json)
 
 # Load the weights into the model
-loaded_model.load_weights('Server_Components/Model/FacialEmotionModel.h5')
+loaded_model.load_weights('Model/FacialEmotionModel.h5')
 
 # Compile the loaded model
 loaded_model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
