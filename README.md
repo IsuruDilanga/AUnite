@@ -1,4 +1,5 @@
-# AUnite Web Application
+# AUnite Web Application![AUniteLogo](https://user-images.githubusercontent.com/126225500/229268887-519d18dd-e22f-4e64-9c2b-b9dcb777a96c.png)
+
 SDGP Project AUnite
 
 Developmental disabilities are generally considered to be a group of disorders that are caused by 
