@@ -19,7 +19,14 @@ to improve their knowledge.
 
 
 ![Login](https://user-images.githubusercontent.com/126225500/229269356-4d5596d0-8980-4006-82a2-fc5cef024a18.png)
+
 ![SignUp](https://user-images.githubusercontent.com/126225500/229269366-502106fc-c7d2-4241-8ad5-259c27c38d61.png)
+
+![Home1](https://user-images.githubusercontent.com/126225500/229269445-5d9d338a-c69f-4e49-9f65-1b5385f8c8a9.png)
+
+![Home2](https://user-images.githubusercontent.com/126225500/229269497-01d051b9-9042-4207-8a75-a00b9636dcfd.png)
+
+
 
 
 
