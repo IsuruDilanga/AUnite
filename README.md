@@ -15,3 +15,8 @@ through visual and interactive methods, whether they are taught in a traditional
 through a digital platform. Hence, there is a need to improve our educational system to support 
 ASD children. So, this web application named “AUnite” focuses on providing learning platforms 
 to improve their knowledge.
+
+
+
+![Screenshot (158)](https://user-images.githubusercontent.com/126225500/229269096-1c30473a-34b7-4b8c-990d-8c43fa32aed8.png)
+
