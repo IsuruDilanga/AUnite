@@ -1,6 +1,4 @@
-# AUnite Web Application !<img align="right" width="100" height="100" src="![AUniteLogo](https://user-images.githubusercontent.com/126225500/229269721-7965e613-d7e8-47c4-9253-f3626aa8a6f7.png)
-">
-
+# AUnite Web Application  ![AUniteLogo](https://user-images.githubusercontent.com/126225500/229269867-d996e120-c7ab-4d08-986c-78fd9b073dd9.png)
 
 
 SDGP Project AUnite
