@@ -1,4 +1,4 @@
-# AUnite Web Application                                             ![AUnite Logo](https://user-images.githubusercontent.com/126225500/229269011-4bcc34ae-52d3-49f4-9e30-3c4ad2239472.png)
+# AUnite Web Application![AUniteLogo](https://user-images.githubusercontent.com/126225500/229269055-71c726e3-a95f-4c17-8a89-88cf878e9032.png)
 
 
 SDGP Project AUnite
