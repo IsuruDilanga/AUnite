@@ -21,26 +21,16 @@ import json
 
 import sqlite3
 
-with open('Server_Components/Model/FacialEmotionModel.json', 'r') as json_file:
-    loaded_model_json = json_file.read()
+emotion_dict = {0: "Angry", 1: "Disgusted", 2: "Fearful", 3: "Happy", 4: "Neutral", 5: "Sad", 6: "Surprised"}
 
+# Load the Keras model
+with open('Server_Components/Model/model.json', 'r') as f:
+    model_json = f.read()
+model = model_from_json(model_json)
+model.load_weights('Server_Components/Model/model.h5')
 
-# Create the CNN model from the loaded architecture
-loaded_model = model_from_json(loaded_model_json)
-
-# Load the weights into the model
-loaded_model.load_weights('Server_Components/Model/FacialEmotionModel.h5')
-
-# Compile the loaded model
-loaded_model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
 app = Flask(__name__)
-
-UPLOAD_FOLDER = 'Image_Uploads'
-
-# Create the folder for uploaded images if it doesn't exist
-if not os.path.exists(UPLOAD_FOLDER):
-    os.makedirs(UPLOAD_FOLDER)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///AUnite.db'
 db = SQLAlchemy(app)
@@ -167,100 +157,138 @@ def faceRecognition():
 
 @app.route('/upload', methods=['POST'])
 def capture_image():
-    try:
+    image_data = request.json['image']
+    image_bytes = base64.b64decode(image_data.split(',')[1])
 
-        data = request.get_json()
-        image_data = data['image']
+    # Save the decoded image to a file
+    with open("image_uploads/capture.png", "wb") as f:
+        f.write(image_bytes)
 
-        print('Image data received:')
+    print("Image data received:")
+    print(f"Saving image to: image_uploads")
 
-        decoded_data = base64.b64decode(image_data.split(',')[1])
-        img = cv2.imdecode(np.fromstring(decoded_data, np.uint8), cv2.IMREAD_UNCHANGED)
+    # Load the saved image using OpenCV
+    img = cv2.imread("image_uploads/capture.png")
 
-        filename = 'capture.png'
-        save_path = os.path.join('Image_Uploads', filename)
-        print('Saving image to:', save_path)
-        cv2.imwrite(save_path, img)
+    # Convert the image to grayscale
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-        preprocessed_image = preprocess_image(img)
+    # Resize the image to 48x48 pixels
+    resized = cv2.resize(gray, (48, 48), interpolation=cv2.INTER_AREA)
 
-        # Use the model to predict the emotion in the image
-        emotion = predict_emotion(preprocessed_image)
-        print('Predicted emotion:', emotion)
+    # Reshape the image to match the input shape of the model
+    tensor_image = np.reshape(resized, (1, 48, 48, 1))
 
-        session['emotion'] = emotion
+    # Normalize the image data
+    tensor_image = tensor_image / 255.0
 
-        return jsonify({'emotion': emotion})
+    # Use the model to predict the emotion
+    predictions = model.predict(tensor_image)
 
-    except Exception as e:
-        print('Error:', str(e))
-        return jsonify({'status': 'error', 'message': str(e)})
+    # Get the index of the emotion with the highest confidence score
+    max_index = np.argmax(predictions[0])
+    print(max_index)
+    emotion = predict_emotion(max_index)
+    session['emotion'] = emotion
+
+    print("using emotion" , predict_emotion(max_index))
+
+
+    # Get the corresponding emotion label and confidence score
+    emotion_label = emotion_dict[max_index]
+    confidence_score = predictions[0][max_index]
+
+    # Print the predicted emotion label and confidence score
+    print(f"Predicted emotion: {emotion_label} (confidence: {confidence_score})")
+
+    
+    
+    # Return the predicted emotion label as a response to the frontend
+    return jsonify({"emotion": emotion_label})
+ 
 
 @app.route('/EQ')
 def eq():
     # emotion = session.pop('emotion', None)
     emotion = session.get('emotion')
-
-    emotionalId = ""
-
-    if emotion == "happy":
+    print('emotion', emotion)
+    
+    if emotion == 'angry':
         emotionalId = "1"
-    elif emotion == "happy":
-        emotionalId == "2"
-    elif emotion == "neutral":
+        print("emotionalId" , emotionalId) 
+        conn = sqlite3.connect('AUnite.db')
+        c = conn.cursor()
+
+        c.execute('SELECT EQWording, shortMotivationVideo FROM eqtable WHERE EmotionalId  = ?', (emotionalId,))
+        data = c.fetchall()
+
+        result = [{'EQWording': row[0], 'ShortMotivationVideo':row[1]} for row in data]
+
+        print(result)
+        return render_template('EQ.html', data=json.dumps(result))
+
+        
+    elif emotion == 'happy':
+        emotionalId ="2"
+        print("emotionalId" , emotionalId) 
+        conn = sqlite3.connect('AUnite.db')
+        c = conn.cursor()
+
+        c.execute('SELECT EQWording, shortMotivationVideo FROM eqtable WHERE EmotionalId  = ?', (emotionalId,))
+        data = c.fetchall()
+
+        result = [{'EQWording': row[0], 'ShortMotivationVideo':row[1]} for row in data]
+
+        print(result)
+        return render_template('EQ.html', data=json.dumps(result))
+
+    elif emotion == 'neutral':
         emotionalId == "3"
-    elif emotion == "sad":
+        print("emotionalId" , emotionalId) 
+        conn = sqlite3.connect('AUnite.db')
+        c = conn.cursor()
+
+        c.execute('SELECT EQWording, shortMotivationVideo FROM eqtable WHERE EmotionalId  = ?', (emotionalId,))
+        data = c.fetchall()
+
+        result = [{'EQWording': row[0], 'ShortMotivationVideo':row[1]} for row in data]
+
+        print(result)
+        return render_template('EQ.html', data=json.dumps(result))
+
+    elif emotion == 'sad':
         emotionalId == "4"
+        print("emotionalId" , emotionalId) 
+        conn = sqlite3.connect('AUnite.db')
+        c = conn.cursor()
+
+        c.execute('SELECT EQWording, shortMotivationVideo FROM eqtable WHERE EmotionalId  = ?', (emotionalId,))
+        data = c.fetchall()
+
+        result = [{'EQWording': row[0], 'ShortMotivationVideo':row[1]} for row in data]
+
+        print(result)
+        return render_template('EQ.html', data=json.dumps(result))
+
     else:
         emotionalId = "5"
+        print("emotionalId" , emotionalId) 
+        conn = sqlite3.connect('AUnite.db')
+        c = conn.cursor()
 
-    conn = sqlite3.connect('AUnite.db')
-    c = conn.cursor()
+        c.execute('SELECT EQWording, shortMotivationVideo FROM eqtable WHERE EmotionalId  = ?', (emotionalId,))
+        data = c.fetchall()
 
-    c.execute('SELECT EQWording, shortMotivationVideo FROM eqtable WHERE EmotionalId = ?', (emotionalId))
-    data = c.fetchall()
+        result = [{'EQWording': row[0], 'ShortMotivationVideo':row[1]} for row in data]
 
-    result = [{'EQWording': row[0], 'ShortMotivationVideo':row[1]} for row in data]
-
-    print(result)
-    return render_template('EQ.html', data=json.dumps(result))
-
-# Define a helper function to decode a base64-encoded image and convert it to a numpy array
-def decode_image(base64_string):
-    imgdata = base64.b64decode(base64_string)
-    img = cv2.imdecode(np.frombuffer(imgdata, np.uint8), cv2.IMREAD_COLOR)
-    return img
-
-# Define a helper function to encode a numpy array as a base64 string
-def encode_image(preprocessed_image):
-    retval, buffer = cv2.imencode('.png', preprocessed_image)
-    encoded_image = base64.b64encode(buffer).decode('utf-8')
-    return encoded_image
-
-# Define a helper function to preprocess an image for input to the model
-def preprocess_image(image):
-    # Convert the image to grayscale
-    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-    # Resize the image to 48x48 pixels
-    resized = cv2.resize(gray, (48, 48), interpolation=cv2.INTER_AREA)
-
-    # Reshape the image to a 4D tensor with shape (1, 48, 48, 1)
-    reshaped = resized.reshape((1, 48, 48, 1))
-
-    # Normalize the pixel values to be between 0 and 1
-    normalized = reshaped / 255.0
-
-    return normalized
+        print(result)
+        return render_template('EQ.html', data=json.dumps(result))
+  
 
 # Define a helper function to use the model to predict the emotion in an image
-def predict_emotion(image):
-    # Use the model to make a prediction on the image
-    prediction = loaded_model.predict(image)
-
-    # Get the index of the predicted emotion (0 = angry, 1 = disgust, 2 = fear, 3 = happy, 4 = sad, 5 = surprise, 6 = neutral)
-    emotion_index = np.argmax(prediction)
-
+def predict_emotion(emotion_index):
+    
+    #emotion_dict = {0: "Angry", 1: "Disgusted", 2: "Fearful", 3: "Happy", 4: "Neutral", 5: "Sad", 6: "Surprised"}
     # Map the emotion index to a string label
     if emotion_index == 0:
         return 'angry'
