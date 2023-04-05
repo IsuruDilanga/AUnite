@@ -20,7 +20,7 @@
         </h1>
 
         <div class="right-align">
-            <a href="HomePage.html">
+            <a href="#">
                 <img class="HomePageIcon" src="../Assets/Assets/HomePageIcon.png" alt="HomePageIcon">
             </a>
             <h2 class="homeLable">Home</h2>
@@ -80,15 +80,6 @@
                   </div>
               </div>
           </div>
-          <br>
-            {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    <div id="message-container">{{ message }}</div>
-                {% endfor %}
-            {% endif %}
-            {% endwith %}
-          <br>
           <input class="btnSubmit" type="submit" value="signup" name="signup">
       </form>
   </section>
