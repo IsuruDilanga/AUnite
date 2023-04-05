@@ -50,15 +50,7 @@
                     <br><br>
                     <input class="password-text" name="password" type="password" placeholder="Password">
                     <br><br>
-                    <br>
-                    {% with messages = get_flashed_messages() %}
-                    {% if messages %}
-                        {% for message in messages %}
-                            <div id="message-container">{{ message }}</div>
-                        {% endfor %}
-                    {% endif %}
-                    {% endwith %}
-                    <br>
+                    
                     <input class="button-62" name="submit" type="submit" value="Login">
 
                     <!-- <button  role="button">Login</button> -->
@@ -70,8 +62,8 @@
     <img class="loginBackground" src="../Assets/Assets/loginBackground.png" alt="Login-background">
 
     <div class="signup-button">
-        <a href="{{url_for('signupPage')}}" style="text-decoration: none;">
-            <img class="circle" src="../Assets/Assets/circle.png" alt="Circle">
+        <a href="../SignUp/SignUp.html" style="text-decoration: none;">
+            <img class="circle" src="../Assets/Image/circle.png" alt="Circle">
             <h2 class="plus">+</h2>
         </a>
         <h4 class="add-account">
