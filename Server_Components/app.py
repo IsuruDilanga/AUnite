@@ -299,11 +299,11 @@ def predict_emotion(emotion_index):
     elif emotion_index == 3:
         return 'happy'
     elif emotion_index == 4:
-        return 'sad'
-    elif emotion_index == 5:
-        return 'surprise'
-    elif emotion_index == 6:
         return 'neutral'
+    elif emotion_index == 5:
+        return 'sad'
+    elif emotion_index == 6:
+        return 'surprised'
 
 @app.route('/meetTeam')
 def meetTeam():
