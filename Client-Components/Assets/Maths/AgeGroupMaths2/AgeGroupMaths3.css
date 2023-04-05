@@ -1,0 +1,61 @@
+body {
+    font-family: Arial;
+    background-color: #fff3B5;
+
+}
+
+.items{
+    text-align: center;
+}
+  
+.nav-bar {
+    height: 120px;
+}
+  
+.PreviousIcon{
+    position: relative;
+    width: 56px;
+    left: 50px;
+    top: 30px;
+}
+  
+.backLabel{
+    position: relative;
+    left: 53px;
+    top: 30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+  
+.right-align{
+    text-align: right;
+    justify-content: right;
+}
+  
+.homeImage{
+    position: relative;
+    width: 55px;
+    height: 65px;
+    bottom: 70px;
+    right: 40px;
+}
+  
+.homeLabel{
+    position: relative;
+    right: 40px;
+    bottom: 80px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
